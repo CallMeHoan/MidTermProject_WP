@@ -193,7 +193,6 @@ namespace MidTermProject
         #endregion
 
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private studentDataSet studentDataSet;
         private System.Windows.Forms.BindingSource studentBindingSource1;
         private studentDataSetTableAdapters.studentTableAdapter studentTableAdapter;
@@ -206,5 +205,6 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridViewTextBoxColumn addressColumn;
         private System.Windows.Forms.DataGridViewImageColumn picColumn;
         private System.Windows.Forms.Button reFresh_btn;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

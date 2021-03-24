@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace MidTermProject
 {

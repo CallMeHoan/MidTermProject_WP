@@ -28,17 +28,32 @@ namespace MidTermProject
         }
         public void LoadGridByKey()
         {
-            SqlCommand sqlcommand = new SqlCommand("Select * from student where concat(StudentID, FirstName, LastName) LIKE '%" + SearchBar_txt + "%'");
-            show_datagv.DataSource = student.getStudents(sqlcommand);
+            
+            if(id_rabtn.Checked == true)
+            {
+                SqlCommand sqlcommand = new SqlCommand("Select * from student where StudentID LIKE '%" + SearchBar_txt.Text + "%'");
+                show_datagv.DataSource = student.getStudents(sqlcommand);
+            }
+            else if(fName_rabtn.Checked == true)
+            {
+                SqlCommand sqlcommand = new SqlCommand("Select * from student where FirstName LIKE '%" + SearchBar_txt.Text + "%'");
+                show_datagv.DataSource = student.getStudents(sqlcommand);
+            }    
+            else
+            {
+                SqlCommand sqlcommand = new SqlCommand("Select * from student where LastName LIKE '%" + SearchBar_txt.Text + "%'");
+                show_datagv.DataSource = student.getStudents(sqlcommand);
+            }    
+            
         }
         private void search_btn_Click(object sender, EventArgs e)
         {
             LoadGridByKey();   
         }
 
-        private void show_datagv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FormSearchStudent_Load(object sender, EventArgs e)
         {
-            this.studentTableAdapter.Fill(this.studentDataSet.student);
+            this.studentTableAdapter.Fill(this.studentDataSet1.student);
         }
     }
 }

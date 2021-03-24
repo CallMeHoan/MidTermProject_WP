@@ -33,9 +33,11 @@ namespace MidTermProject
             this.StudentToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.AddStuToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.ListStuToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchStuToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.printStu_ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.staticToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchStuToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,9 @@ namespace MidTermProject
             this.StudentToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddStuToolStrip,
             this.ListStuToolStrip,
-            this.searchStuToolStrip});
+            this.searchStuToolStrip,
+            this.printStu_ToolStrip,
+            this.staticToolStrip});
             this.StudentToolStrip.Name = "StudentToolStrip";
             this.StudentToolStrip.Size = new System.Drawing.Size(87, 24);
             this.StudentToolStrip.Text = "STUDENT";
@@ -76,24 +80,38 @@ namespace MidTermProject
             this.ListStuToolStrip.Text = "List Student";
             this.ListStuToolStrip.Click += new System.EventHandler(this.ListStuToolStrip_Click);
             // 
-            // cOURSEToolStripMenuItem
-            // 
-            this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
-            this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
-            this.cOURSEToolStripMenuItem.Text = "COURSE";
-            // 
-            // sCOREToolStripMenuItem
-            // 
-            this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
-            this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
-            this.sCOREToolStripMenuItem.Text = "SCORE";
-            // 
             // searchStuToolStrip
             // 
             this.searchStuToolStrip.Name = "searchStuToolStrip";
             this.searchStuToolStrip.Size = new System.Drawing.Size(224, 26);
             this.searchStuToolStrip.Text = "Search Student";
             this.searchStuToolStrip.Click += new System.EventHandler(this.searchStuToolStrip_Click);
+            // 
+            // printStu_ToolStrip
+            // 
+            this.printStu_ToolStrip.Name = "printStu_ToolStrip";
+            this.printStu_ToolStrip.Size = new System.Drawing.Size(224, 26);
+            this.printStu_ToolStrip.Text = "Print Student";
+            this.printStu_ToolStrip.Click += new System.EventHandler(this.printStu_ToolStrip_Click);
+            // 
+            // staticToolStrip
+            // 
+            this.staticToolStrip.Name = "staticToolStrip";
+            this.staticToolStrip.Size = new System.Drawing.Size(224, 26);
+            this.staticToolStrip.Text = "Statics";
+            this.staticToolStrip.Click += new System.EventHandler(this.staticToolStrip_Click);
+            // 
+            // cOURSEToolStripMenuItem
+            // 
+            this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
+            this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.cOURSEToolStripMenuItem.Text = "COURSE";
+            // 
+            // sCOREToolStripMenuItem
+            // 
+            this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
+            this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.sCOREToolStripMenuItem.Text = "SCORE";
             // 
             // FormMain
             // 
@@ -119,5 +137,7 @@ namespace MidTermProject
         private System.Windows.Forms.ToolStripMenuItem cOURSEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchStuToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem printStu_ToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem staticToolStrip;
     }
 }

@@ -19,16 +19,16 @@ namespace MidTermProject
 
         private void AddStuToolStrip_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
             FormAddStudent addStudent = new FormAddStudent();
-            addStudent.Show(this);
+            addStudent.Show();
         }
 
         private void ListStuToolStrip_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
             FormShowData showData = new FormShowData();
-            showData.Show(this);
+            showData.Show();
         }
 
         private void searchStuToolStrip_Click(object sender, EventArgs e)
@@ -36,6 +36,20 @@ namespace MidTermProject
             Close();
             FormSearchStudent search = new FormSearchStudent();
             search.Show();
+        }
+
+        private void printStu_ToolStrip_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormPrint print = new FormPrint();
+            print.Show();
+        }
+
+        private void staticToolStrip_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormStatics statics = new FormStatics();
+            statics.Show();
         }
     }
 }
