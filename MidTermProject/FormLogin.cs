@@ -31,7 +31,7 @@ namespace MidTermProject
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM account WHERE acc = @acc AND pass = @pass", db.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM accou WHERE acc = @acc AND pass = @pass", db.getConnection);
 
             command.Parameters.Add("@acc", SqlDbType.VarChar).Value = uname_txt.Text;
             command.Parameters.Add("@pass", SqlDbType.VarChar).Value = pword_txt.Text;
@@ -50,6 +50,13 @@ namespace MidTermProject
             {
                 MessageBox.Show("Invalid username or password");
             }
+        }
+
+        private void signup_btn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FormSignUp signUp = new FormSignUp();
+            signUp.Show(this);
         }
     }
 }

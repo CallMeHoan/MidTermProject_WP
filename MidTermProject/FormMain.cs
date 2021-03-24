@@ -30,5 +30,12 @@ namespace MidTermProject
             FormShowData showData = new FormShowData();
             showData.Show(this);
         }
+
+        private void searchStuToolStrip_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormSearchStudent search = new FormSearchStudent();
+            search.Show();
+        }
     }
 }

@@ -30,11 +30,7 @@ namespace MidTermProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentDataSet = new MidTermProject.studentDataSet();
-            this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,15 +39,16 @@ namespace MidTermProject
             this.phoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.studentDataSet = new MidTermProject.studentDataSet();
+            this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
+            this.reFresh_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "student";
             // 
             // dataGridView1
             // 
@@ -66,27 +63,14 @@ namespace MidTermProject
             this.phoneColumn,
             this.addressColumn,
             this.picColumn});
-            this.dataGridView1.DataSource = this.studentBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 0);
+            this.dataGridView1.DataSource = this.studentBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(41, 26);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1017, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(936, 364);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // studentBindingSource1
-            // 
-            this.studentBindingSource1.DataMember = "student";
-            this.studentBindingSource1.DataSource = this.studentDataSet;
-            // 
-            // studentDataSet
-            // 
-            this.studentDataSet.DataSetName = "studentDataSet";
-            this.studentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // idColumn
             // 
@@ -160,17 +144,46 @@ namespace MidTermProject
             this.picColumn.ReadOnly = true;
             this.picColumn.Width = 125;
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "student";
+            // 
+            // studentBindingSource1
+            // 
+            this.studentBindingSource1.DataMember = "student";
+            this.studentBindingSource1.DataSource = this.studentDataSet;
+            // 
+            // studentDataSet
+            // 
+            this.studentDataSet.DataSetName = "studentDataSet";
+            this.studentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // reFresh_btn
+            // 
+            this.reFresh_btn.Location = new System.Drawing.Point(398, 403);
+            this.reFresh_btn.Name = "reFresh_btn";
+            this.reFresh_btn.Size = new System.Drawing.Size(224, 42);
+            this.reFresh_btn.TabIndex = 2;
+            this.reFresh_btn.Text = "Refresh";
+            this.reFresh_btn.UseVisualStyleBackColor = true;
+            this.reFresh_btn.Click += new System.EventHandler(this.reFresh_btn_Click);
+            // 
             // FormShowData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 450);
+            this.ClientSize = new System.Drawing.Size(1022, 456);
+            this.Controls.Add(this.reFresh_btn);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormShowData";
             this.Text = "FormShowData";
             this.Load += new System.EventHandler(this.FormShowData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -192,5 +205,6 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressColumn;
         private System.Windows.Forms.DataGridViewImageColumn picColumn;
+        private System.Windows.Forms.Button reFresh_btn;
     }
 }

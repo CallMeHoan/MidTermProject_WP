@@ -30,6 +30,8 @@ namespace MidTermProject
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.signup_btn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.Cancel_btn = new System.Windows.Forms.Button();
             this.login_btn = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -43,6 +45,8 @@ namespace MidTermProject
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.signup_btn);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Cancel_btn);
             this.panel1.Controls.Add(this.login_btn);
             this.panel1.Controls.Add(this.checkBox2);
@@ -53,14 +57,33 @@ namespace MidTermProject
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(514, 652);
+            this.panel1.Size = new System.Drawing.Size(514, 427);
             this.panel1.TabIndex = 0;
+            // 
+            // signup_btn
+            // 
+            this.signup_btn.Location = new System.Drawing.Point(263, 297);
+            this.signup_btn.Name = "signup_btn";
+            this.signup_btn.Size = new System.Drawing.Size(132, 26);
+            this.signup_btn.TabIndex = 9;
+            this.signup_btn.Text = "Sign up";
+            this.signup_btn.UseVisualStyleBackColor = true;
+            this.signup_btn.Click += new System.EventHandler(this.signup_btn_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(59, 302);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(202, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "If you don\'t have your account:";
             // 
             // Cancel_btn
             // 
-            this.Cancel_btn.Location = new System.Drawing.Point(172, 293);
+            this.Cancel_btn.Location = new System.Drawing.Point(212, 356);
             this.Cancel_btn.Name = "Cancel_btn";
-            this.Cancel_btn.Size = new System.Drawing.Size(135, 61);
+            this.Cancel_btn.Size = new System.Drawing.Size(100, 61);
             this.Cancel_btn.TabIndex = 7;
             this.Cancel_btn.Text = "Cancel";
             this.Cancel_btn.UseVisualStyleBackColor = true;
@@ -133,7 +156,7 @@ namespace MidTermProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 656);
+            this.ClientSize = new System.Drawing.Size(512, 441);
             this.Controls.Add(this.panel1);
             this.Name = "FormLogin";
             this.Text = "Formlogin";
@@ -154,6 +177,8 @@ namespace MidTermProject
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button signup_btn;
+        private System.Windows.Forms.Label label4;
     }
 }
 

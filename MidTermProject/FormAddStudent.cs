@@ -64,7 +64,7 @@ namespace MidTermProject
                 MessageBox.Show("Empty fields", "Add student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-        bool Verify()
+        public bool Verify()
         {
             if ((FirstName_txt.Text.Trim() == "")
                 || (LastName_txt.Text.Trim() == "")

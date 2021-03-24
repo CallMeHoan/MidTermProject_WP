@@ -52,6 +52,12 @@
     <Compile Include="FormAddStudent.Designer.cs">
       <DependentUpon>FormAddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditRemove.Designer.cs">
+      <DependentUpon>FormEditRemove.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,12 +70,25 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearchStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchStudent.Designer.cs">
+      <DependentUpon>FormSearchStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormShowData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormShowData.Designer.cs">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSignUp.Designer.cs">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAccount.cs" />
     <Compile Include="MyAccount.cs" />
     <Compile Include="MyDB.cs" />
     <Compile Include="Program.cs" />
@@ -80,8 +99,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="studentDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>studentDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAddStudent.resx">
       <DependentUpon>FormAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditRemove.resx">
+      <DependentUpon>FormEditRemove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -89,8 +116,14 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchStudent.resx">
+      <DependentUpon>FormSearchStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShowData.resx">
       <DependentUpon>FormShowData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSignUp.resx">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +153,17 @@
     </None>
     <None Include="studentDataSet.xss">
       <DependentUpon>studentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="studentDataSet1.xsc">
+      <DependentUpon>studentDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="studentDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>studentDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="studentDataSet1.xss">
+      <DependentUpon>studentDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
