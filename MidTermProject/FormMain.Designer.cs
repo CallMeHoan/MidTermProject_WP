@@ -38,6 +38,7 @@ namespace MidTermProject
             this.staticToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,8 @@ namespace MidTermProject
             this.ListStuToolStrip,
             this.searchStuToolStrip,
             this.printStu_ToolStrip,
-            this.staticToolStrip});
+            this.staticToolStrip,
+            this.manageStudentToolStripMenuItem});
             this.StudentToolStrip.Name = "StudentToolStrip";
             this.StudentToolStrip.Size = new System.Drawing.Size(87, 24);
             this.StudentToolStrip.Text = "STUDENT";
@@ -113,6 +115,13 @@ namespace MidTermProject
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.sCOREToolStripMenuItem.Text = "SCORE";
             // 
+            // manageStudentToolStripMenuItem
+            // 
+            this.manageStudentToolStripMenuItem.Name = "manageStudentToolStripMenuItem";
+            this.manageStudentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageStudentToolStripMenuItem.Text = "Manage Student";
+            this.manageStudentToolStripMenuItem.Click += new System.EventHandler(this.manageStudentToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -139,5 +148,6 @@ namespace MidTermProject
         private System.Windows.Forms.ToolStripMenuItem searchStuToolStrip;
         private System.Windows.Forms.ToolStripMenuItem printStu_ToolStrip;
         private System.Windows.Forms.ToolStripMenuItem staticToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem manageStudentToolStripMenuItem;
     }
 }

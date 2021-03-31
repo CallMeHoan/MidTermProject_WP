@@ -51,5 +51,12 @@ namespace MidTermProject
             FormStatics statics = new FormStatics();
             statics.Show();
         }
+
+        private void manageStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormManageStudent manageStudent = new FormManageStudent();
+            manageStudent.Show();
+        }
     }
 }

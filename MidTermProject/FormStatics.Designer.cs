@@ -121,7 +121,7 @@ namespace MidTermProject
             // 
             this.m_lb.AutoSize = true;
             this.m_lb.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lb.Location = new System.Drawing.Point(110, 84);
+            this.m_lb.Location = new System.Drawing.Point(88, 84);
             this.m_lb.Name = "m_lb";
             this.m_lb.Size = new System.Drawing.Size(0, 32);
             this.m_lb.TabIndex = 8;
@@ -130,7 +130,7 @@ namespace MidTermProject
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 84);
+            this.label1.Location = new System.Drawing.Point(11, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 32);
             this.label1.TabIndex = 8;
@@ -161,7 +161,7 @@ namespace MidTermProject
             // 
             this.fm_lb.AutoSize = true;
             this.fm_lb.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fm_lb.Location = new System.Drawing.Point(123, 84);
+            this.fm_lb.Location = new System.Drawing.Point(102, 84);
             this.fm_lb.Name = "fm_lb";
             this.fm_lb.Size = new System.Drawing.Size(0, 32);
             this.fm_lb.TabIndex = 10;
@@ -170,7 +170,7 @@ namespace MidTermProject
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 84);
+            this.label3.Location = new System.Drawing.Point(-3, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 32);
             this.label3.TabIndex = 10;
