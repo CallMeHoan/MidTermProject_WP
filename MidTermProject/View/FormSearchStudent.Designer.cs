@@ -41,10 +41,10 @@ namespace MidTermProject
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentDataSet1 = new MidTermProject.studentDataSet1();
+            this.studentDataSet1 = new MidTermProject.studentDataSet();
             this.cancel_btn = new System.Windows.Forms.Button();
             this.search_btn = new System.Windows.Forms.Button();
-            this.studentTableAdapter = new MidTermProject.studentDataSet1TableAdapters.studentTableAdapter();
+            this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
             this.id_rabtn = new System.Windows.Forms.RadioButton();
             this.fName_rabtn = new System.Windows.Forms.RadioButton();
             this.lName_rabtn = new System.Windows.Forms.RadioButton();
@@ -242,9 +242,9 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridView show_datagv;
         private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.Button search_btn;
-        private studentDataSet1 studentDataSet1;
+        private studentDataSet studentDataSet1;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private studentDataSet1TableAdapters.studentTableAdapter studentTableAdapter;
+        private studentDataSetTableAdapters.studentTableAdapter studentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;

@@ -41,8 +41,8 @@ namespace MidTermProject
             this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentDataSet2 = new MidTermProject.studentDataSet2();
-            this.studentTableAdapter = new MidTermProject.studentDataSet2TableAdapters.studentTableAdapter();
+            this.studentDataSet2 = new MidTermProject.studentDataSet();
+            this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
             this.main_pn = new System.Windows.Forms.Panel();
             this.check_btn = new System.Windows.Forms.Button();
             this.fMale_rbtn = new System.Windows.Forms.RadioButton();
@@ -433,9 +433,9 @@ namespace MidTermProject
 
         private System.Windows.Forms.Button saveToExcel_btn;
         private System.Windows.Forms.DataGridView info_dgv;
-        private studentDataSet2 studentDataSet2;
+        private studentDataSet studentDataSet2;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private studentDataSet2TableAdapters.studentTableAdapter studentTableAdapter;
+        private studentDataSetTableAdapters.studentTableAdapter studentTableAdapter;
         private System.Windows.Forms.Panel main_pn;
         private System.Windows.Forms.RadioButton fMale_rbtn;
         private System.Windows.Forms.RadioButton male_rbtn;

@@ -16,7 +16,7 @@ namespace MidTermProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrint());
+            Application.Run(new FormManageStudent());
         }
     }
 }

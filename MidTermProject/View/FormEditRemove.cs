@@ -40,6 +40,7 @@ namespace MidTermProject
 
             if (((this_year - born_year) < 10 || (this_year - born_year) > 100))
             {
+
                 MessageBox.Show("The student age must between 10 and 100 years old", "Invalid Birth Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (Verify())
@@ -47,7 +48,6 @@ namespace MidTermProject
                 try
                 {
                     id = Convert.ToInt32(ID_txt.Text);
-
                     picture_ptb.Image.Save(picture, picture_ptb.Image.RawFormat);
                     if (student.updateStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
                     {
