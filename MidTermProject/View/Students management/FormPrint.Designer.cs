@@ -32,14 +32,6 @@ namespace MidTermProject
             this.components = new System.ComponentModel.Container();
             this.saveToExcel_btn = new System.Windows.Forms.Button();
             this.info_dgv = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dobColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDataSet2 = new MidTermProject.studentDataSet();
             this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
@@ -56,14 +48,17 @@ namespace MidTermProject
             this.uselb = new System.Windows.Forms.Label();
             this.no_rbtn = new System.Windows.Forms.RadioButton();
             this.yes_rbtn = new System.Windows.Forms.RadioButton();
-            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.print_btn = new System.Windows.Forms.Button();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dobColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.saveWord_btn = new System.Windows.Forms.Button();
+            this.savePDF_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.info_dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet2)).BeginInit();
@@ -73,9 +68,9 @@ namespace MidTermProject
             // 
             // saveToExcel_btn
             // 
-            this.saveToExcel_btn.Location = new System.Drawing.Point(225, 531);
+            this.saveToExcel_btn.Location = new System.Drawing.Point(206, 531);
             this.saveToExcel_btn.Name = "saveToExcel_btn";
-            this.saveToExcel_btn.Size = new System.Drawing.Size(224, 42);
+            this.saveToExcel_btn.Size = new System.Drawing.Size(95, 42);
             this.saveToExcel_btn.TabIndex = 4;
             this.saveToExcel_btn.Text = "Save to MS Excel";
             this.saveToExcel_btn.UseVisualStyleBackColor = true;
@@ -93,15 +88,7 @@ namespace MidTermProject
             this.genderColumn,
             this.phoneColumn,
             this.addressColumn,
-            this.picColumn,
-            this.studentIDDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.pictureDataGridViewImageColumn});
+            this.picColumn});
             this.info_dgv.DataSource = this.studentBindingSource;
             this.info_dgv.Location = new System.Drawing.Point(12, 144);
             this.info_dgv.Name = "info_dgv";
@@ -109,78 +96,6 @@ namespace MidTermProject
             this.info_dgv.RowTemplate.Height = 24;
             this.info_dgv.Size = new System.Drawing.Size(936, 364);
             this.info_dgv.TabIndex = 3;
-            // 
-            // idColumn
-            // 
-            this.idColumn.DataPropertyName = "StudentID";
-            this.idColumn.HeaderText = "ID";
-            this.idColumn.MinimumWidth = 6;
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 89;
-            // 
-            // fNameColumn
-            // 
-            this.fNameColumn.DataPropertyName = "FirstName";
-            this.fNameColumn.HeaderText = "First Name";
-            this.fNameColumn.MinimumWidth = 6;
-            this.fNameColumn.Name = "fNameColumn";
-            this.fNameColumn.ReadOnly = true;
-            this.fNameColumn.Width = 125;
-            // 
-            // lNameColumn
-            // 
-            this.lNameColumn.DataPropertyName = "LastName";
-            this.lNameColumn.HeaderText = "Last Name";
-            this.lNameColumn.MinimumWidth = 6;
-            this.lNameColumn.Name = "lNameColumn";
-            this.lNameColumn.ReadOnly = true;
-            this.lNameColumn.Width = 125;
-            // 
-            // dobColumn
-            // 
-            this.dobColumn.DataPropertyName = "DateOfBirth";
-            this.dobColumn.HeaderText = "Date of birth";
-            this.dobColumn.MinimumWidth = 6;
-            this.dobColumn.Name = "dobColumn";
-            this.dobColumn.ReadOnly = true;
-            this.dobColumn.Width = 125;
-            // 
-            // genderColumn
-            // 
-            this.genderColumn.DataPropertyName = "Gender";
-            this.genderColumn.HeaderText = "Gender";
-            this.genderColumn.MinimumWidth = 6;
-            this.genderColumn.Name = "genderColumn";
-            this.genderColumn.ReadOnly = true;
-            this.genderColumn.Width = 75;
-            // 
-            // phoneColumn
-            // 
-            this.phoneColumn.DataPropertyName = "PhoneNumber";
-            this.phoneColumn.HeaderText = "Phone number";
-            this.phoneColumn.MinimumWidth = 6;
-            this.phoneColumn.Name = "phoneColumn";
-            this.phoneColumn.ReadOnly = true;
-            this.phoneColumn.Width = 130;
-            // 
-            // addressColumn
-            // 
-            this.addressColumn.DataPropertyName = "Address";
-            this.addressColumn.HeaderText = "Address";
-            this.addressColumn.MinimumWidth = 6;
-            this.addressColumn.Name = "addressColumn";
-            this.addressColumn.ReadOnly = true;
-            this.addressColumn.Width = 125;
-            // 
-            // picColumn
-            // 
-            this.picColumn.DataPropertyName = "Picture";
-            this.picColumn.HeaderText = "Picture";
-            this.picColumn.MinimumWidth = 6;
-            this.picColumn.Name = "picColumn";
-            this.picColumn.ReadOnly = true;
-            this.picColumn.Width = 89;
             // 
             // studentBindingSource
             // 
@@ -291,7 +206,7 @@ namespace MidTermProject
             // 
             // time1_tp
             // 
-            this.time1_tp.CustomFormat = "yyyy-MM-dd";
+            this.time1_tp.CustomFormat = "dd-MM-yyyy";
             this.time1_tp.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.time1_tp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.time1_tp.Location = new System.Drawing.Point(174, 44);
@@ -343,75 +258,116 @@ namespace MidTermProject
             this.yes_rbtn.Text = "Yes";
             this.yes_rbtn.UseVisualStyleBackColor = true;
             // 
-            // studentIDDataGridViewTextBoxColumn
+            // print_btn
             // 
-            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.HeaderText = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
-            this.studentIDDataGridViewTextBoxColumn.Width = 125;
+            this.print_btn.Location = new System.Drawing.Point(661, 531);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(95, 42);
+            this.print_btn.TabIndex = 6;
+            this.print_btn.Text = "Print";
+            this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // idColumn
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
+            this.idColumn.DataPropertyName = "StudentID";
+            this.idColumn.HeaderText = "ID";
+            this.idColumn.MinimumWidth = 6;
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 89;
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // fNameColumn
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 125;
+            this.fNameColumn.DataPropertyName = "FirstName";
+            this.fNameColumn.HeaderText = "First Name";
+            this.fNameColumn.MinimumWidth = 6;
+            this.fNameColumn.Name = "fNameColumn";
+            this.fNameColumn.ReadOnly = true;
+            this.fNameColumn.Width = 125;
             // 
-            // dateOfBirthDataGridViewTextBoxColumn
+            // lNameColumn
             // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.Width = 125;
+            this.lNameColumn.DataPropertyName = "LastName";
+            this.lNameColumn.HeaderText = "Last Name";
+            this.lNameColumn.MinimumWidth = 6;
+            this.lNameColumn.Name = "lNameColumn";
+            this.lNameColumn.ReadOnly = true;
+            this.lNameColumn.Width = 125;
             // 
-            // genderDataGridViewTextBoxColumn
+            // dobColumn
             // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "gender";
-            this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.Width = 125;
+            this.dobColumn.DataPropertyName = "DateOfBirth";
+            this.dobColumn.HeaderText = "Date of birth";
+            this.dobColumn.MinimumWidth = 6;
+            this.dobColumn.Name = "dobColumn";
+            this.dobColumn.ReadOnly = true;
+            this.dobColumn.Width = 125;
             // 
-            // phoneNumberDataGridViewTextBoxColumn
+            // genderColumn
             // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 125;
+            this.genderColumn.DataPropertyName = "Gender";
+            this.genderColumn.HeaderText = "Gender";
+            this.genderColumn.MinimumWidth = 6;
+            this.genderColumn.Name = "genderColumn";
+            this.genderColumn.ReadOnly = true;
+            this.genderColumn.Width = 75;
             // 
-            // addressDataGridViewTextBoxColumn
+            // phoneColumn
             // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 125;
+            this.phoneColumn.DataPropertyName = "PhoneNumber";
+            this.phoneColumn.HeaderText = "Phone number";
+            this.phoneColumn.MinimumWidth = 6;
+            this.phoneColumn.Name = "phoneColumn";
+            this.phoneColumn.ReadOnly = true;
+            this.phoneColumn.Width = 130;
             // 
-            // pictureDataGridViewImageColumn
+            // addressColumn
             // 
-            this.pictureDataGridViewImageColumn.DataPropertyName = "picture";
-            this.pictureDataGridViewImageColumn.HeaderText = "picture";
-            this.pictureDataGridViewImageColumn.MinimumWidth = 6;
-            this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
-            this.pictureDataGridViewImageColumn.Width = 125;
+            this.addressColumn.DataPropertyName = "Address";
+            this.addressColumn.HeaderText = "Address";
+            this.addressColumn.MinimumWidth = 6;
+            this.addressColumn.Name = "addressColumn";
+            this.addressColumn.ReadOnly = true;
+            this.addressColumn.Width = 125;
+            // 
+            // picColumn
+            // 
+            this.picColumn.DataPropertyName = "Picture";
+            this.picColumn.HeaderText = "Picture";
+            this.picColumn.MinimumWidth = 6;
+            this.picColumn.Name = "picColumn";
+            this.picColumn.ReadOnly = true;
+            this.picColumn.Width = 89;
+            // 
+            // saveWord_btn
+            // 
+            this.saveWord_btn.Location = new System.Drawing.Point(358, 531);
+            this.saveWord_btn.Name = "saveWord_btn";
+            this.saveWord_btn.Size = new System.Drawing.Size(95, 42);
+            this.saveWord_btn.TabIndex = 7;
+            this.saveWord_btn.Text = "Save to MS Word";
+            this.saveWord_btn.UseVisualStyleBackColor = true;
+            this.saveWord_btn.Click += new System.EventHandler(this.saveWord_btn_Click);
+            // 
+            // savePDF_btn
+            // 
+            this.savePDF_btn.Location = new System.Drawing.Point(511, 531);
+            this.savePDF_btn.Name = "savePDF_btn";
+            this.savePDF_btn.Size = new System.Drawing.Size(95, 42);
+            this.savePDF_btn.TabIndex = 8;
+            this.savePDF_btn.Text = "Save to PDF";
+            this.savePDF_btn.UseVisualStyleBackColor = true;
+            this.savePDF_btn.Click += new System.EventHandler(this.savePDF_btn_Click);
             // 
             // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 607);
+            this.Controls.Add(this.savePDF_btn);
+            this.Controls.Add(this.saveWord_btn);
+            this.Controls.Add(this.print_btn);
             this.Controls.Add(this.main_pn);
             this.Controls.Add(this.saveToExcel_btn);
             this.Controls.Add(this.info_dgv);
@@ -449,6 +405,7 @@ namespace MidTermProject
         private System.Windows.Forms.DateTimePicker time2_tp;
         private System.Windows.Forms.DateTimePicker time1_tp;
         private System.Windows.Forms.Label date_lb;
+        private System.Windows.Forms.Button print_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameColumn;
@@ -457,13 +414,7 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressColumn;
         private System.Windows.Forms.DataGridViewImageColumn picColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
+        private System.Windows.Forms.Button saveWord_btn;
+        private System.Windows.Forms.Button savePDF_btn;
     }
 }

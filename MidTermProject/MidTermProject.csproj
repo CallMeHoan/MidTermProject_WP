@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -47,16 +50,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\FormAddStudent.cs">
+    <Compile Include="Control\Function\courseFunction.cs" />
+    <Compile Include="Control\DB connection\MyCourses.cs" />
+    <Compile Include="Control\DB connection\MyDB.cs" />
+    <Compile Include="coursesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>coursesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="coursesDataSetFull.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>coursesDataSetFull.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormAddStudent.Designer.cs">
+    <Compile Include="View\Courses management\FormAddCourse.Designer.cs">
+      <DependentUpon>FormAddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormEditCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Courses management\FormEditCourse.Designer.cs">
+      <DependentUpon>FormEditCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormManageCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Courses management\FormManageCourse.Designer.cs">
+      <DependentUpon>FormManageCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormPrintCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Courses management\FormPrintCourse.Designer.cs">
+      <DependentUpon>FormPrintCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormRemoveCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Courses management\FormRemoveCourse.Designer.cs">
+      <DependentUpon>FormRemoveCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Students management\FormAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Students management\FormAddStudent.Designer.cs">
       <DependentUpon>FormAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormEditRemove.cs">
+    <Compile Include="View\Students management\FormEditRemove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormEditRemove.Designer.cs">
+    <Compile Include="View\Students management\FormEditRemove.Designer.cs">
       <DependentUpon>FormEditRemove.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormLogin.cs">
@@ -71,57 +117,68 @@
     <Compile Include="View\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormManageStudent.cs">
+    <Compile Include="View\Students management\FormManageStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormManageStudent.Designer.cs">
+    <Compile Include="View\Students management\FormManageStudent.Designer.cs">
       <DependentUpon>FormManageStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormSearchStudent.cs">
+    <Compile Include="View\Students management\FormSearchStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormSearchStudent.Designer.cs">
+    <Compile Include="View\Students management\FormSearchStudent.Designer.cs">
       <DependentUpon>FormSearchStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormShowData.cs">
+    <Compile Include="View\Students management\FormShowData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormShowData.Designer.cs">
+    <Compile Include="View\Students management\FormShowData.Designer.cs">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormSignUp.cs">
+    <Compile Include="View\Students management\FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormSignUp.Designer.cs">
+    <Compile Include="View\Students management\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormStatics.cs">
+    <Compile Include="View\Students management\FormStatics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormStatics.Designer.cs">
+    <Compile Include="View\Students management\FormStatics.Designer.cs">
       <DependentUpon>FormStatics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Function\ManageAccount.cs" />
-    <Compile Include="Function\MyAccount.cs" />
-    <Compile Include="Function\MyDB.cs" />
-    <Compile Include="View\FormPrint.cs">
+    <Compile Include="Control\Function\ManageAccount.cs" />
+    <Compile Include="Control\DB connection\MyAccount.cs" />
+    <Compile Include="View\Students management\FormPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormPrint.Designer.cs">
+    <Compile Include="View\Students management\FormPrint.Designer.cs">
       <DependentUpon>FormPrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="Function\Program.cs" />
+    <Compile Include="Control\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Function\STUDENT.cs" />
+    <Compile Include="Control\Function\STUDENT.cs" />
     <Compile Include="studentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>studentDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FormAddStudent.resx">
+    <EmbeddedResource Include="View\Courses management\FormAddCourse.resx">
+      <DependentUpon>FormAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Courses management\FormEditCourse.resx">
+      <DependentUpon>FormEditCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Courses management\FormManageCourse.resx">
+      <DependentUpon>FormManageCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Courses management\FormRemoveCourse.resx">
+      <DependentUpon>FormRemoveCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Students management\FormAddStudent.resx">
       <DependentUpon>FormAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormEditRemove.resx">
+    <EmbeddedResource Include="View\Students management\FormEditRemove.resx">
       <DependentUpon>FormEditRemove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
@@ -130,22 +187,22 @@
     <EmbeddedResource Include="View\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormManageStudent.resx">
+    <EmbeddedResource Include="View\Students management\FormManageStudent.resx">
       <DependentUpon>FormManageStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormPrint.resx">
+    <EmbeddedResource Include="View\Students management\FormPrint.resx">
       <DependentUpon>FormPrint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormSearchStudent.resx">
+    <EmbeddedResource Include="View\Students management\FormSearchStudent.resx">
       <DependentUpon>FormSearchStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormShowData.resx">
+    <EmbeddedResource Include="View\Students management\FormShowData.resx">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormSignUp.resx">
+    <EmbeddedResource Include="View\Students management\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormStatics.resx">
+    <EmbeddedResource Include="View\Students management\FormStatics.resx">
       <DependentUpon>FormStatics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,6 +214,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="coursesDataSet.xsc">
+      <DependentUpon>coursesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="coursesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>coursesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="coursesDataSet.xss">
+      <DependentUpon>coursesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="coursesDataSetFull.xsc">
+      <DependentUpon>coursesDataSetFull.xsd</DependentUpon>
+    </None>
+    <None Include="coursesDataSetFull.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>coursesDataSetFull.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="coursesDataSetFull.xss">
+      <DependentUpon>coursesDataSetFull.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MidTermProject
@@ -16,7 +13,7 @@ namespace MidTermProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormManageStudent());
+            Application.Run(new FormManageCourse());
         }
     }
 }

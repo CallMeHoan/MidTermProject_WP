@@ -58,5 +58,41 @@ namespace MidTermProject
             FormManageStudent manageStudent = new FormManageStudent();
             manageStudent.Show();
         }
+
+        private void addCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormAddCourse addCourse = new FormAddCourse();
+            addCourse.Show();
+            
+        }
+
+        private void editCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormEditCourse editCourse = new FormEditCourse();
+            editCourse.Show();
+        }
+
+        private void manageCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormManageCourse manageCourse = new FormManageCourse();
+            manageCourse.Show();
+        }
+
+        private void removeCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormRemoveCourse removeCourse = new FormRemoveCourse();
+            removeCourse.Show();
+        }
+
+        private void printCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormPrint print = new FormPrint();
+            print.Show();
+        }
     }
 }

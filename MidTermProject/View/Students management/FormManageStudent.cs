@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
-
+using System.Drawing.Imaging;
 
 namespace MidTermProject
 {
@@ -236,6 +236,20 @@ namespace MidTermProject
             SqlCommand command = new SqlCommand("select count(*) from student", mydb.GetConnection);
             int value = Convert.ToInt32(command.ExecuteScalar());
             return value;
+        }
+
+        private void dowload_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog svf = new SaveFileDialog();
+            svf.FileName = ("student_" + ID_txt.Text);
+            if ((picture_ptb.Image == null))
+            {
+                MessageBox.Show("No Image In the Picture Box");
+            }
+            else if (svf.ShowDialog() == DialogResult.OK)
+            {
+                picture_ptb.Image.Save(svf.FileName + ("." + ImageFormat.Jpeg.ToString()));
+            }
         }
     }
 }

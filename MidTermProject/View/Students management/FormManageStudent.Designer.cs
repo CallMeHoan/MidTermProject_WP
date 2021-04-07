@@ -73,8 +73,9 @@ namespace MidTermProject
             this.Add_btn = new System.Windows.Forms.Button();
             this.refresh_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.text = new System.Windows.Forms.Label();
             this.result_lb = new System.Windows.Forms.Label();
+            this.text = new System.Windows.Forms.Label();
+            this.dowload_btn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_ptb)).BeginInit();
             this.panel1.SuspendLayout();
@@ -106,7 +107,7 @@ namespace MidTermProject
             // 
             this.loadPic_btn.Location = new System.Drawing.Point(125, 442);
             this.loadPic_btn.Name = "loadPic_btn";
-            this.loadPic_btn.Size = new System.Drawing.Size(202, 28);
+            this.loadPic_btn.Size = new System.Drawing.Size(101, 28);
             this.loadPic_btn.TabIndex = 69;
             this.loadPic_btn.Text = "Load Image";
             this.loadPic_btn.UseVisualStyleBackColor = true;
@@ -469,6 +470,15 @@ namespace MidTermProject
             this.panel3.Size = new System.Drawing.Size(216, 42);
             this.panel3.TabIndex = 85;
             // 
+            // result_lb
+            // 
+            this.result_lb.AutoSize = true;
+            this.result_lb.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.result_lb.Location = new System.Drawing.Point(152, 8);
+            this.result_lb.Name = "result_lb";
+            this.result_lb.Size = new System.Drawing.Size(0, 28);
+            this.result_lb.TabIndex = 1;
+            // 
             // text
             // 
             this.text.AutoSize = true;
@@ -479,20 +489,22 @@ namespace MidTermProject
             this.text.TabIndex = 0;
             this.text.Text = "Total student:";
             // 
-            // result_lb
+            // dowload_btn
             // 
-            this.result_lb.AutoSize = true;
-            this.result_lb.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.result_lb.Location = new System.Drawing.Point(152, 8);
-            this.result_lb.Name = "result_lb";
-            this.result_lb.Size = new System.Drawing.Size(0, 28);
-            this.result_lb.TabIndex = 1;
+            this.dowload_btn.Location = new System.Drawing.Point(232, 442);
+            this.dowload_btn.Name = "dowload_btn";
+            this.dowload_btn.Size = new System.Drawing.Size(95, 28);
+            this.dowload_btn.TabIndex = 87;
+            this.dowload_btn.Text = "Dowload";
+            this.dowload_btn.UseVisualStyleBackColor = true;
+            this.dowload_btn.Click += new System.EventHandler(this.dowload_btn_Click);
             // 
             // FormManageStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 545);
+            this.Controls.Add(this.dowload_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.Add_btn);
@@ -586,5 +598,6 @@ namespace MidTermProject
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label result_lb;
         private System.Windows.Forms.Label text;
+        private System.Windows.Forms.Button dowload_btn;
     }
 }
