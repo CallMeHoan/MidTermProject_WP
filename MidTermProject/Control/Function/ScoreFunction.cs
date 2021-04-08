@@ -33,10 +33,11 @@ namespace MidTermProject
         }
 
         // Remove course
-        public bool removeCourse(int id)
+        public bool removeScore(int stuid, int cid)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM score WHERE CourseID = @id", dbcon.getConnection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlCommand command = new SqlCommand("DELETE FROM score WHERE StudentID = @stuid and CourseID = @cid", dbcon.getConnection);
+            command.Parameters.Add("@stuid", SqlDbType.Int).Value = stuid;
+            command.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
             dbcon.openConnection();
             if ((command.ExecuteNonQuery() == 1))
             {
@@ -50,12 +51,12 @@ namespace MidTermProject
             }
         }
         //update student
-        public bool updateCourse(int id, string name, int period, string des)
+        public bool updateScore(int stuid, int cid, float score, string des)
         {
-            SqlCommand command = new SqlCommand("UPDATE courses SET CourseID = @id, LaBel = @cname, Period = @period, Description = @des WHERE CourseID=@id", dbcon.getConnection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            command.Parameters.Add("@cname", SqlDbType.NVarChar).Value = name;
-            command.Parameters.Add("@period", SqlDbType.Int).Value = period;
+            SqlCommand command = new SqlCommand("UPDATE score SET StudentID = @stuid, CourseID = @cid, Score = @score, Description = @des WHERE StudentID = @stuid and CourseID=@cid", dbcon.getConnection);
+            command.Parameters.Add("@stuid", SqlDbType.Int).Value = stuid;
+            command.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+            command.Parameters.Add("@score", SqlDbType.Float).Value = score;
             command.Parameters.Add("@des", SqlDbType.Text).Value = des;
 
             dbcon.openConnection();

@@ -56,6 +56,36 @@
     <Compile Include="Control\Function\ScoreFunction.cs" />
     <Compile Include="Control\Function\StudentFunction.cs" />
     <Compile Include="Control\Program.cs" />
+    <Compile Include="View\Score management\FormAddScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Score management\FormAddScore.Designer.cs">
+      <DependentUpon>FormAddScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Score management\FormAvgScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Score management\FormAvgScore.Designer.cs">
+      <DependentUpon>FormAvgScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Score management\FormManageScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Score management\FormManageScore.Designer.cs">
+      <DependentUpon>FormManageScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Score management\FormPrintScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Score management\FormPrintScore.Designer.cs">
+      <DependentUpon>FormPrintScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Score management\FormRemoveScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Score management\FormRemoveScore.Designer.cs">
+      <DependentUpon>FormRemoveScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentManageDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,6 +193,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Courses management\FormRemoveCourse.resx">
       <DependentUpon>FormRemoveCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Score management\FormAddScore.resx">
+      <DependentUpon>FormAddScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Score management\FormAvgScore.resx">
+      <DependentUpon>FormAvgScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Score management\FormManageScore.resx">
+      <DependentUpon>FormManageScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Score management\FormRemoveScore.resx">
+      <DependentUpon>FormRemoveScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Students management\FormAddStudent.resx">
       <DependentUpon>FormAddStudent.cs</DependentUpon>
