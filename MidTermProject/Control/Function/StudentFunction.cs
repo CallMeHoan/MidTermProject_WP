@@ -9,12 +9,12 @@ using System.Data;
 
 namespace MidTermProject
 {
-    class STUDENT
+    class StudentFunction
     {
-        MyDB mydb = new MyDB();
+        DBConnection dbcon = new DBConnection();
         public bool insertStudent(int id, string fname, string lname, DateTime bdate, string gender, string phone, string address, MemoryStream picture)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO student (StudentID,FirstName,LastName,DateOfBirth,Gender,PhoneNumber,Address,Picture)" + " VALUES (@id,@fn,@ln,@bdt,@gdr,@phn,@adrs,@pic)", mydb.GetConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO student (StudentID,FirstName,LastName,DateOfBirth,Gender,PhoneNumber,Address,Picture)" + " VALUES (@id,@fn,@ln,@bdt,@gdr,@phn,@adrs,@pic)", dbcon.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
             command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
@@ -24,15 +24,15 @@ namespace MidTermProject
             command.Parameters.Add("@adrs", SqlDbType.VarChar).Value = address;
             command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
 
-            mydb.openConnectionState();
+            dbcon.openConnection();
             if (command.ExecuteNonQuery() == 1)
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
                 return false;
             }
         }
@@ -41,7 +41,7 @@ namespace MidTermProject
             DataTable table = new DataTable();
             try
             {
-                command.Connection = mydb.GetConnection;
+                command.Connection = dbcon.getConnection;
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
                 return table;
@@ -53,28 +53,28 @@ namespace MidTermProject
             }
             finally
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
             }
         }
         public bool deleteStudent(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM student WHERE StudentID = @id", mydb.GetConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM student WHERE StudentID = @id", dbcon.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            mydb.openConnectionState();
+            dbcon.openConnection();
             if ((command.ExecuteNonQuery() == 1))
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
                 return false;
             }
         }
         public bool updateStudent(int id, string fname, string lname, DateTime bdate, string gender, string phone, string address, MemoryStream picture)
         {
-            SqlCommand command = new SqlCommand("UPDATE student SET FirstName=@fn,LastName=@ln,DateOfBirth=@bdt,Gender=@gdr,PhoneNumber=@phn,Address=@adrs,Picture=@pic WHERE StudentID=@id", mydb.GetConnection);
+            SqlCommand command = new SqlCommand("UPDATE student SET FirstName=@fn,LastName=@ln,DateOfBirth=@bdt,Gender=@gdr,PhoneNumber=@phn,Address=@adrs,Picture=@pic WHERE StudentID=@id", dbcon.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
             command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
@@ -84,15 +84,15 @@ namespace MidTermProject
             command.Parameters.Add("@adrs", SqlDbType.VarChar).Value = address;
             command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
 
-            mydb.openConnectionState();
+            dbcon.openConnection();
             if ((command.ExecuteNonQuery() == 1))
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
                 return true;
             }
             else
             {
-                mydb.closeConnection();
+                dbcon.closeConnection();
                 return false;
             }
         }

@@ -39,13 +39,13 @@ namespace MidTermProject
             this.descript_txt = new System.Windows.Forms.TextBox();
             this.cName_txt = new System.Windows.Forms.TextBox();
             this.ID_cb = new System.Windows.Forms.ComboBox();
-            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coursesDataSet = new MidTermProject.coursesDataSet();
             this.period_nud = new System.Windows.Forms.NumericUpDown();
-            this.coursesTableAdapter = new MidTermProject.coursesDataSetTableAdapters.coursesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
+            this.studentManageDataSet1 = new MidTermProject.StudentManageDataSet1();
+            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coursesTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.coursesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.period_nud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cancel_btn
@@ -140,16 +140,6 @@ namespace MidTermProject
             this.ID_cb.ValueMember = "CourseID";
             this.ID_cb.SelectedValueChanged += new System.EventHandler(this.ID_cb_SelectedValueChanged);
             // 
-            // coursesBindingSource
-            // 
-            this.coursesBindingSource.DataMember = "courses";
-            this.coursesBindingSource.DataSource = this.coursesDataSet;
-            // 
-            // coursesDataSet
-            // 
-            this.coursesDataSet.DataSetName = "coursesDataSet";
-            this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // period_nud
             // 
             this.period_nud.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +147,16 @@ namespace MidTermProject
             this.period_nud.Name = "period_nud";
             this.period_nud.Size = new System.Drawing.Size(211, 34);
             this.period_nud.TabIndex = 21;
+            // 
+            // studentManageDataSet1
+            // 
+            this.studentManageDataSet1.DataSetName = "StudentManageDataSet1";
+            this.studentManageDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // coursesBindingSource
+            // 
+            this.coursesBindingSource.DataMember = "courses";
+            this.coursesBindingSource.DataSource = this.studentManageDataSet1;
             // 
             // coursesTableAdapter
             // 
@@ -180,9 +180,9 @@ namespace MidTermProject
             this.Name = "FormEditCourse";
             this.Text = "FormEditCourse";
             this.Load += new System.EventHandler(this.FormEditCourse_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.period_nud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,8 +200,8 @@ namespace MidTermProject
         private System.Windows.Forms.TextBox cName_txt;
         private System.Windows.Forms.ComboBox ID_cb;
         private System.Windows.Forms.NumericUpDown period_nud;
-        private coursesDataSet coursesDataSet;
+        private StudentManageDataSet1 studentManageDataSet1;
         private System.Windows.Forms.BindingSource coursesBindingSource;
-        private coursesDataSetTableAdapters.coursesTableAdapter coursesTableAdapter;
+        private StudentManageDataSet1TableAdapters.coursesTableAdapter coursesTableAdapter;
     }
 }

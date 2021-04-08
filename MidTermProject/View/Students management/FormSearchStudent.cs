@@ -14,7 +14,7 @@ namespace MidTermProject
 {
     public partial class FormSearchStudent : Form
     {
-        STUDENT student = new STUDENT();
+        StudentFunction stuf = new StudentFunction();
         public FormSearchStudent()
         {
             InitializeComponent();
@@ -28,32 +28,34 @@ namespace MidTermProject
         }
         public void LoadGridByKey()
         {
-            
-            if(id_rabtn.Checked == true)
+
+            if (id_rabtn.Checked == true)
             {
                 SqlCommand sqlcommand = new SqlCommand("Select * from student where StudentID LIKE '%" + SearchBar_txt.Text + "%'");
-                show_datagv.DataSource = student.getStudents(sqlcommand);
+                show_datagv.DataSource = stuf.getStudents(sqlcommand);
             }
-            else if(fName_rabtn.Checked == true)
+            else if (fName_rabtn.Checked == true)
             {
                 SqlCommand sqlcommand = new SqlCommand("Select * from student where FirstName LIKE '%" + SearchBar_txt.Text + "%'");
-                show_datagv.DataSource = student.getStudents(sqlcommand);
-            }    
+                show_datagv.DataSource = stuf.getStudents(sqlcommand);
+            }
             else
             {
                 SqlCommand sqlcommand = new SqlCommand("Select * from student where LastName LIKE '%" + SearchBar_txt.Text + "%'");
-                show_datagv.DataSource = student.getStudents(sqlcommand);
-            }    
-            
+                show_datagv.DataSource = stuf.getStudents(sqlcommand);
+            }
+
         }
         private void search_btn_Click(object sender, EventArgs e)
         {
-            LoadGridByKey();   
+            LoadGridByKey();
         }
 
         private void FormSearchStudent_Load(object sender, EventArgs e)
         {
-            this.studentTableAdapter.Fill(this.studentDataSet1.student);
+            // TODO: This line of code loads data into the 'studentManageDataSet1.student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.studentManageDataSet1.student);
+            this.studentTableAdapter.Fill(this.studentManageDataSet1.student);
         }
     }
 }

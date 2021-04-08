@@ -15,12 +15,11 @@ namespace MidTermProject
 {
     public partial class FormEditRemove : Form
     {
+        StudentFunction stuf = new StudentFunction();
         public FormEditRemove()
         {
             InitializeComponent();
         }
-        STUDENT student = new STUDENT();
-
         private void edit_btn_Click(object sender, EventArgs e)
         {
             int id;
@@ -49,7 +48,7 @@ namespace MidTermProject
                 {
                     id = Convert.ToInt32(ID_txt.Text);
                     picture_ptb.Image.Save(picture, picture_ptb.Image.RawFormat);
-                    if (student.updateStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
+                    if (stuf.updateStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
                     {
                         MessageBox.Show("Update successfully!", "Edit student", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -59,7 +58,7 @@ namespace MidTermProject
                         MessageBox.Show("Error!", "Edit student", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Edit Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -74,7 +73,7 @@ namespace MidTermProject
             try
             {
                 int id = Convert.ToInt32(ID_txt.Text);
-                if(student.deleteStudent(id))
+                if (stuf.deleteStudent(id))
                 {
                     MessageBox.Show("Do you want to delete this student?", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     ID_txt.Text = "";

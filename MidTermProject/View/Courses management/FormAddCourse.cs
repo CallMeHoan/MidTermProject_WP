@@ -12,7 +12,7 @@ namespace MidTermProject
 {
     public partial class FormAddCourse : Form
     {
-        courseFunction course = new courseFunction();
+        CourseFunction cf = new CourseFunction();
         public FormAddCourse()
         {
             InitializeComponent();
@@ -34,13 +34,13 @@ namespace MidTermProject
             int period = Convert.ToInt32(period_txt.Text);
             string des = descript_txt.Text;
 
-            if(period < 10)
+            if (period < 10)
             {
                 MessageBox.Show("Number of period must equal or greater than 10", "Invalid number of period", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (Verify())
             {
-                if(course.insertCourse(id, cName, period, des))
+                if (cf.insertCourse(id, cName, period, des))
                 {
                     MessageBox.Show("New course added successfully!", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

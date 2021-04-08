@@ -13,6 +13,7 @@ namespace MidTermProject
 {
     public partial class FormLogin : Form
     {
+        DBConnection dbcon = new DBConnection();
         public FormLogin()
         {
             InitializeComponent();
@@ -25,13 +26,11 @@ namespace MidTermProject
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            MyAccount db = new MyAccount();
-
             SqlDataAdapter adapter = new SqlDataAdapter();
 
             DataTable table = new DataTable();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM accou WHERE acc = @acc AND pass = @pass", db.getConnection);
+            SqlCommand command = new SqlCommand("SELECT * FROM account WHERE acc = @acc AND pass = @pass", dbcon.getConnection);
 
             command.Parameters.Add("@acc", SqlDbType.VarChar).Value = uname_txt.Text;
             command.Parameters.Add("@pass", SqlDbType.VarChar).Value = pword_txt.Text;

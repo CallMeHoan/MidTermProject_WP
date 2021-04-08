@@ -25,7 +25,7 @@ namespace MidTermProject
 
         private void Add_btn_Click_1(object sender, EventArgs e)
         {
-            STUDENT student = new STUDENT();
+            StudentFunction stuf = new StudentFunction();
             int id = Convert.ToInt32(Id_txt.Text);
             string fname = FirstName_txt.Text;
             string lname = LastName_txt.Text;
@@ -49,7 +49,7 @@ namespace MidTermProject
             else if (Verify())
             {
                 pictureBox1.Image.Save(picture, pictureBox1.Image.RawFormat);
-                if (student.insertStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
+                if (stuf.insertStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
                 {
                     MessageBox.Show("New student added successfully!", "Add student", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

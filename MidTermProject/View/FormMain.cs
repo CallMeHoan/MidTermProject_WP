@@ -64,7 +64,7 @@ namespace MidTermProject
             Close();
             FormAddCourse addCourse = new FormAddCourse();
             addCourse.Show();
-            
+
         }
 
         private void editCourseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace MidTermProject
         private void printCourseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
-            FormPrint print = new FormPrint();
+            FormPrintCourse print = new FormPrintCourse();
             print.Show();
         }
     }

@@ -22,7 +22,8 @@ namespace MidTermProject
 {
     public partial class FormPrint : Form
     {
-        STUDENT student = new STUDENT();
+        StudentFunction stuf = new StudentFunction();
+        DBConnection dbcon = new DBConnection();
         public FormPrint()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace MidTermProject
         private void FormPrint_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'studentDataSet2.student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.studentDataSet2.student);
+            this.studentTableAdapter.Fill(this.studentManageDataSet1.student);
 
         }
 
@@ -217,11 +218,10 @@ namespace MidTermProject
         //load student từ database
         public void loadStudent()
         {
-            MyDB mydb = new MyDB();
-            mydb.openConnectionState();
-            SqlDataAdapter sda = new SqlDataAdapter("Select * from student", mydb.GetConnection);
+            dbcon.openConnection();
+            SqlDataAdapter sda = new SqlDataAdapter("Select * from student", dbcon.getConnection);
             info_dgv.AllowUserToAddRows = false;
-            mydb.closeConnection();
+            dbcon.closeConnection();
         }
         // check điều kiện của radio button để load dữ liệu lên data grid view
         public void LoadByGender()
@@ -241,21 +241,21 @@ namespace MidTermProject
                     SqlCommand command = new SqlCommand("SELECT * from student where DateOfBirth between @start and @end and gender = 'Male'");
                     command.Parameters.Add("@start", SqlDbType.DateTime).Value = start;
                     command.Parameters.Add("@end", SqlDbType.DateTime).Value = end;
-                    info_dgv.DataSource = student.getStudents(command);
+                    info_dgv.DataSource = stuf.getStudents(command);
                 }
                 else if (fMale_rbtn.Checked)
                 {
                     SqlCommand command = new SqlCommand("SELECT * from student where DateOfBirth between @start and @end and gender = 'Female'");
                     command.Parameters.Add("@start", SqlDbType.DateTime).Value = start;
                     command.Parameters.Add("@end", SqlDbType.DateTime).Value = end;
-                    info_dgv.DataSource = student.getStudents(command);
+                    info_dgv.DataSource = stuf.getStudents(command);
                 }
                 else
                 {
                     SqlCommand command = new SqlCommand("SELECT * from student where DateOfBirth between @start and @end");
                     command.Parameters.Add("@start", SqlDbType.DateTime).Value = start;
                     command.Parameters.Add("@end", SqlDbType.DateTime).Value = end;
-                    info_dgv.DataSource = student.getStudents(command);
+                    info_dgv.DataSource = stuf.getStudents(command);
                 }
             }
             else
@@ -263,17 +263,17 @@ namespace MidTermProject
                 if (allGender_rbtn.Checked)
                 {
                     SqlCommand command = new SqlCommand("SELECT * from student");
-                    info_dgv.DataSource = student.getStudents(command);
+                    info_dgv.DataSource = stuf.getStudents(command);
                 }
                 else if (fMale_rbtn.Checked)
                 {
                     SqlCommand command = new SqlCommand("SELECT * from student where gender = 'female'");
-                    info_dgv.DataSource = student.getStudents(command);
+                    info_dgv.DataSource = stuf.getStudents(command);
                 }
                 else
                 {
                     SqlCommand command = new SqlCommand("SELECT * from student where gender = 'male'");
-                    info_dgv.DataSource = student.getStudents(command);
+                    info_dgv.DataSource = stuf.getStudents(command);
                 }
             }
         }

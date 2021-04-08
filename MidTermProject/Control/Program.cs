@@ -13,7 +13,7 @@ namespace MidTermProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormManageCourse());
+            Application.Run(new FormLogin());
         }
     }
 }

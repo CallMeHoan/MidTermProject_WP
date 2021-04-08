@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>..\..\itextsharp.dll</HintPath>
+      <HintPath>D:\Năm 2 20-21 p2\Window Programing\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,18 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\Function\courseFunction.cs" />
-    <Compile Include="Control\DB connection\MyCourses.cs" />
-    <Compile Include="Control\DB connection\MyDB.cs" />
-    <Compile Include="coursesDataSet.Designer.cs">
+    <Compile Include="Control\DBConnection.cs" />
+    <Compile Include="Control\Function\AccountFunction.cs" />
+    <Compile Include="Control\Function\CourseFunction.cs" />
+    <Compile Include="Control\Function\ScoreFunction.cs" />
+    <Compile Include="Control\Function\StudentFunction.cs" />
+    <Compile Include="Control\Program.cs" />
+    <Compile Include="StudentManageDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>coursesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="coursesDataSetFull.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>coursesDataSetFull.xsd</DependentUpon>
+      <DependentUpon>StudentManageDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="View\Courses management\FormAddCourse.cs">
       <SubType>Form</SubType>
@@ -105,10 +103,10 @@
     <Compile Include="View\Students management\FormEditRemove.Designer.cs">
       <DependentUpon>FormEditRemove.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormLogin.cs">
+    <Compile Include="View\Authentication\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormLogin.Designer.cs">
+    <Compile Include="View\Authentication\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormMain.cs">
@@ -135,10 +133,10 @@
     <Compile Include="View\Students management\FormShowData.Designer.cs">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Students management\FormSignUp.cs">
+    <Compile Include="View\Authentication\FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Students management\FormSignUp.Designer.cs">
+    <Compile Include="View\Authentication\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Students management\FormStatics.cs">
@@ -147,22 +145,13 @@
     <Compile Include="View\Students management\FormStatics.Designer.cs">
       <DependentUpon>FormStatics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Function\ManageAccount.cs" />
-    <Compile Include="Control\DB connection\MyAccount.cs" />
     <Compile Include="View\Students management\FormPrint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Students management\FormPrint.Designer.cs">
       <DependentUpon>FormPrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Control\Function\STUDENT.cs" />
-    <Compile Include="studentDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>studentDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\Courses management\FormAddCourse.resx">
       <DependentUpon>FormAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,7 +170,7 @@
     <EmbeddedResource Include="View\Students management\FormEditRemove.resx">
       <DependentUpon>FormEditRemove.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormLogin.resx">
+    <EmbeddedResource Include="View\Authentication\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormMain.resx">
@@ -199,7 +188,7 @@
     <EmbeddedResource Include="View\Students management\FormShowData.resx">
       <DependentUpon>FormShowData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Students management\FormSignUp.resx">
+    <EmbeddedResource Include="View\Authentication\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Students management\FormStatics.resx">
@@ -214,28 +203,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="coursesDataSet.xsc">
-      <DependentUpon>coursesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="coursesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>coursesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="coursesDataSet.xss">
-      <DependentUpon>coursesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="coursesDataSetFull.xsc">
-      <DependentUpon>coursesDataSetFull.xsd</DependentUpon>
-    </None>
-    <None Include="coursesDataSetFull.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>coursesDataSetFull.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="coursesDataSetFull.xss">
-      <DependentUpon>coursesDataSetFull.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,16 +212,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="studentDataSet.xsc">
-      <DependentUpon>studentDataSet.xsd</DependentUpon>
+    <None Include="StudentManageDataSet1.xsc">
+      <DependentUpon>StudentManageDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="studentDataSet.xsd">
+    <None Include="StudentManageDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>studentDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>StudentManageDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="studentDataSet.xss">
-      <DependentUpon>studentDataSet.xsd</DependentUpon>
+    <None Include="StudentManageDataSet1.xss">
+      <DependentUpon>StudentManageDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

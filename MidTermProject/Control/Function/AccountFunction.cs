@@ -9,34 +9,34 @@ using System.Data;
 
 namespace MidTermProject
 {
-    class ManageAccount
+    class AccountFunction
     {
         public bool insertAcc(string acc, string pass)
         {
-            MyAccount db = new MyAccount();
-            SqlCommand command = new SqlCommand("INSERT INTO accou (acc,pass)" + " VALUES (@acc,@pass)", db.getConnection);
+            DBConnection dbcon = new DBConnection();
+            SqlCommand command = new SqlCommand("INSERT INTO account (acc,pass)" + " VALUES (@acc,@pass)", dbcon.getConnection);
             command.Parameters.Add("@acc", SqlDbType.NVarChar).Value = acc;
             command.Parameters.Add("@pass", SqlDbType.NVarChar).Value = pass;
-            db.openConnection();
+            dbcon.openConnection();
             try
             {
                 if ((command.ExecuteNonQuery() == 1))
                 {
-                    db.closeConnection();
+                    dbcon.closeConnection();
                     return true;
                 }
                 else
                 {
-                    db.closeConnection();
+                    dbcon.closeConnection();
                     return false;
                 }
             }
             catch
             {
-                db.closeConnection();
+                dbcon.closeConnection();
                 return false;
             }
-            
-        }    
+
+        }
     }
 }

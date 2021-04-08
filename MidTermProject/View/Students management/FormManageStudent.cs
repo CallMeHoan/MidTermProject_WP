@@ -15,8 +15,8 @@ namespace MidTermProject
 {
     public partial class FormManageStudent : Form
     {
-        STUDENT student = new STUDENT();
-        MyDB mydb = new MyDB();
+        StudentFunction stuf = new StudentFunction();
+        DBConnection dbcon = new DBConnection();
         public FormManageStudent()
         {
             InitializeComponent();
@@ -28,25 +28,25 @@ namespace MidTermProject
             if (id_rabtn.Checked == true)
             {
                 SqlCommand sqlcommand = new SqlCommand("Select * from student where StudentID LIKE '%" + SearchBar_txt.Text + "%'");
-                show_datagv.DataSource = student.getStudents(sqlcommand);
+                show_datagv.DataSource = stuf.getStudents(sqlcommand);
             }
             else if (fName_rabtn.Checked == true)
             {
                 SqlCommand sqlcommand = new SqlCommand("Select * from student where FirstName LIKE '%" + SearchBar_txt.Text + "%'");
-                show_datagv.DataSource = student.getStudents(sqlcommand);
+                show_datagv.DataSource = stuf.getStudents(sqlcommand);
             }
             else
             {
                 SqlCommand sqlcommand = new SqlCommand("Select * from student where LastName LIKE '%" + SearchBar_txt.Text + "%'");
-                show_datagv.DataSource = student.getStudents(sqlcommand);
+                show_datagv.DataSource = stuf.getStudents(sqlcommand);
             }
 
         }
 
         private void FormManageStudent_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentDataSet1.student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.studentDataSet.student);
+            // TODO: This line of code loads data into the 'studentManageDataSet1.student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.studentManageDataSet1.student);
             result_lb.Text = total().ToString();
 
         }
@@ -104,7 +104,7 @@ namespace MidTermProject
                 {
                     id = Convert.ToInt32(ID_txt.Text);
                     picture_ptb.Image.Save(picture, picture_ptb.Image.RawFormat);
-                    if (student.updateStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
+                    if (stuf.updateStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
                     {
                         MessageBox.Show("Update successfully!", "Edit student", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -155,7 +155,7 @@ namespace MidTermProject
             try
             {
                 int id = Convert.ToInt32(ID_txt.Text);
-                if (student.deleteStudent(id))
+                if (stuf.deleteStudent(id))
                 {
                     MessageBox.Show("Do you want to delete this student?", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     ID_txt.Text = "";
@@ -183,7 +183,7 @@ namespace MidTermProject
             show_datagv.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             show_datagv.RowTemplate.Height = 80;
-            show_datagv.DataSource = student.getStudents(command);
+            show_datagv.DataSource = stuf.getStudents(command);
             picCol = (DataGridViewImageColumn)show_datagv.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             show_datagv.AllowUserToAddRows = false;
@@ -191,7 +191,6 @@ namespace MidTermProject
 
         private void Add_btn_Click(object sender, EventArgs e)
         {
-            STUDENT student = new STUDENT();
             int id = Convert.ToInt32(ID_txt.Text);
             string fname = fName_txt.Text;
             string lname = lName_txt.Text;
@@ -215,7 +214,7 @@ namespace MidTermProject
             else if (Verify())
             {
                 picture_ptb.Image.Save(picture, picture_ptb.Image.RawFormat);
-                if (student.insertStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
+                if (stuf.insertStudent(id, fname, lname, bdate, gender, phone, adrs, picture))
                 {
                     MessageBox.Show("New student added successfully!", "Add student", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -232,8 +231,8 @@ namespace MidTermProject
         }
         public int total()
         {
-            mydb.openConnectionState();
-            SqlCommand command = new SqlCommand("select count(*) from student", mydb.GetConnection);
+            dbcon.openConnection();
+            SqlCommand command = new SqlCommand("select count(*) from student", dbcon.getConnection);
             int value = Convert.ToInt32(command.ExecuteScalar());
             return value;
         }

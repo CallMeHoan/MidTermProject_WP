@@ -31,17 +31,11 @@ namespace MidTermProject
         {
             this.components = new System.ComponentModel.Container();
             this.showCourse_dgv = new System.Windows.Forms.DataGridView();
-            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coursesDataSetFull = new MidTermProject.coursesDataSetFull();
             this.name_rbtn = new System.Windows.Forms.RadioButton();
             this.id_rabtn = new System.Windows.Forms.RadioButton();
             this.search_btn = new System.Windows.Forms.Button();
             this.SearchBar_txt = new System.Windows.Forms.TextBox();
-            this.coursesTableAdapter = new MidTermProject.coursesDataSetFullTableAdapters.coursesTableAdapter();
+            this.coursesTableAdapter = new MidTermProject.StudentManageDataSet1.studentDataTable();
             this.description_lb = new System.Windows.Forms.Label();
             this.period_lb = new System.Windows.Forms.Label();
             this.name_lb = new System.Windows.Forms.Label();
@@ -55,9 +49,17 @@ namespace MidTermProject
             this.delete_btn = new System.Windows.Forms.Button();
             this.cancel_btn = new System.Windows.Forms.Button();
             this.refresh_btn = new System.Windows.Forms.Button();
+            this.studentManageDataSet1 = new MidTermProject.StudentManageDataSet1();
+            this.coursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coursesTableAdapter1 = new MidTermProject.StudentManageDataSet1TableAdapters.coursesTableAdapter();
+            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.showCourse_dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coursesTableAdapter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesDataSetFull)).BeginInit();
             this.SuspendLayout();
             // 
             // showCourse_dgv
@@ -77,48 +79,6 @@ namespace MidTermProject
             this.showCourse_dgv.Size = new System.Drawing.Size(738, 297);
             this.showCourse_dgv.TabIndex = 96;
             this.showCourse_dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.show_datagv_RowHeaderMouseClick);
-            // 
-            // courseIDDataGridViewTextBoxColumn
-            // 
-            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
-            this.courseIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // labelDataGridViewTextBoxColumn
-            // 
-            this.labelDataGridViewTextBoxColumn.DataPropertyName = "Label";
-            this.labelDataGridViewTextBoxColumn.HeaderText = "Label";
-            this.labelDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.labelDataGridViewTextBoxColumn.Name = "labelDataGridViewTextBoxColumn";
-            this.labelDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // periodDataGridViewTextBoxColumn
-            // 
-            this.periodDataGridViewTextBoxColumn.DataPropertyName = "Period";
-            this.periodDataGridViewTextBoxColumn.HeaderText = "Period";
-            this.periodDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.periodDataGridViewTextBoxColumn.Name = "periodDataGridViewTextBoxColumn";
-            this.periodDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // coursesBindingSource
-            // 
-            this.coursesBindingSource.DataMember = "courses";
-            this.coursesBindingSource.DataSource = this.coursesDataSetFull;
-            // 
-            // coursesDataSetFull
-            // 
-            this.coursesDataSetFull.DataSetName = "coursesDataSetFull";
-            this.coursesDataSetFull.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // name_rbtn
             // 
@@ -161,7 +121,10 @@ namespace MidTermProject
             // 
             // coursesTableAdapter
             // 
-            this.coursesTableAdapter.ClearBeforeFill = true;
+            this.coursesTableAdapter.Constraints.AddRange(new System.Data.Constraint[] {
+            new System.Data.UniqueConstraint("Constraint1", new string[] {
+                        "StudentID"}, true)});
+            this.coursesTableAdapter.TableName = "student";
             // 
             // description_lb
             // 
@@ -286,6 +249,52 @@ namespace MidTermProject
             this.refresh_btn.UseVisualStyleBackColor = true;
             this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
             // 
+            // studentManageDataSet1
+            // 
+            this.studentManageDataSet1.DataSetName = "StudentManageDataSet1";
+            this.studentManageDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // coursesBindingSource
+            // 
+            this.coursesBindingSource.DataMember = "courses";
+            this.coursesBindingSource.DataSource = this.studentManageDataSet1;
+            // 
+            // coursesTableAdapter1
+            // 
+            this.coursesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // courseIDDataGridViewTextBoxColumn
+            // 
+            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
+            this.courseIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // labelDataGridViewTextBoxColumn
+            // 
+            this.labelDataGridViewTextBoxColumn.DataPropertyName = "Label";
+            this.labelDataGridViewTextBoxColumn.HeaderText = "Label";
+            this.labelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.labelDataGridViewTextBoxColumn.Name = "labelDataGridViewTextBoxColumn";
+            this.labelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // periodDataGridViewTextBoxColumn
+            // 
+            this.periodDataGridViewTextBoxColumn.DataPropertyName = "Period";
+            this.periodDataGridViewTextBoxColumn.HeaderText = "Period";
+            this.periodDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.periodDataGridViewTextBoxColumn.Name = "periodDataGridViewTextBoxColumn";
+            this.periodDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormManageCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,8 +322,8 @@ namespace MidTermProject
             this.Text = "FormManageCourse";
             this.Load += new System.EventHandler(this.FormManageCourse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.showCourse_dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coursesDataSetFull)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,13 +336,7 @@ namespace MidTermProject
         private System.Windows.Forms.RadioButton id_rabtn;
         private System.Windows.Forms.Button search_btn;
         private System.Windows.Forms.TextBox SearchBar_txt;
-        private coursesDataSetFull coursesDataSetFull;
-        private System.Windows.Forms.BindingSource coursesBindingSource;
-        private coursesDataSetFullTableAdapters.coursesTableAdapter coursesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn labelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn periodDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private StudentManageDataSet1.studentDataTable coursesTableAdapter;
         private System.Windows.Forms.Label description_lb;
         private System.Windows.Forms.Label period_lb;
         private System.Windows.Forms.Label name_lb;
@@ -347,5 +350,12 @@ namespace MidTermProject
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.Button refresh_btn;
+        private StudentManageDataSet1 studentManageDataSet1;
+        private System.Windows.Forms.BindingSource coursesBindingSource;
+        private StudentManageDataSet1TableAdapters.coursesTableAdapter coursesTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn labelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }

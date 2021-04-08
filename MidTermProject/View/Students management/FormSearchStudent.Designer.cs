@@ -32,6 +32,14 @@ namespace MidTermProject
             this.components = new System.ComponentModel.Container();
             this.SearchBar_txt = new System.Windows.Forms.TextBox();
             this.show_datagv = new System.Windows.Forms.DataGridView();
+            this.cancel_btn = new System.Windows.Forms.Button();
+            this.search_btn = new System.Windows.Forms.Button();
+            this.id_rabtn = new System.Windows.Forms.RadioButton();
+            this.fName_rabtn = new System.Windows.Forms.RadioButton();
+            this.lName_rabtn = new System.Windows.Forms.RadioButton();
+            this.studentManageDataSet1 = new MidTermProject.StudentManageDataSet1();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,17 +48,9 @@ namespace MidTermProject
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentDataSet1 = new MidTermProject.studentDataSet();
-            this.cancel_btn = new System.Windows.Forms.Button();
-            this.search_btn = new System.Windows.Forms.Button();
-            this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
-            this.id_rabtn = new System.Windows.Forms.RadioButton();
-            this.fName_rabtn = new System.Windows.Forms.RadioButton();
-            this.lName_rabtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.show_datagv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchBar_txt
@@ -81,6 +81,73 @@ namespace MidTermProject
             this.show_datagv.RowTemplate.Height = 24;
             this.show_datagv.Size = new System.Drawing.Size(613, 308);
             this.show_datagv.TabIndex = 4;
+            // 
+            // cancel_btn
+            // 
+            this.cancel_btn.Location = new System.Drawing.Point(528, 424);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(112, 26);
+            this.cancel_btn.TabIndex = 5;
+            this.cancel_btn.Text = "Cancel";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
+            // 
+            // search_btn
+            // 
+            this.search_btn.Location = new System.Drawing.Point(528, 48);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(112, 26);
+            this.search_btn.TabIndex = 6;
+            this.search_btn.Text = "Search";
+            this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            // 
+            // id_rabtn
+            // 
+            this.id_rabtn.AutoSize = true;
+            this.id_rabtn.Location = new System.Drawing.Point(27, 12);
+            this.id_rabtn.Name = "id_rabtn";
+            this.id_rabtn.Size = new System.Drawing.Size(42, 21);
+            this.id_rabtn.TabIndex = 1;
+            this.id_rabtn.TabStop = true;
+            this.id_rabtn.Text = "ID";
+            this.id_rabtn.UseVisualStyleBackColor = true;
+            // 
+            // fName_rabtn
+            // 
+            this.fName_rabtn.AutoSize = true;
+            this.fName_rabtn.Location = new System.Drawing.Point(75, 12);
+            this.fName_rabtn.Name = "fName_rabtn";
+            this.fName_rabtn.Size = new System.Drawing.Size(97, 21);
+            this.fName_rabtn.TabIndex = 2;
+            this.fName_rabtn.TabStop = true;
+            this.fName_rabtn.Text = "First Name";
+            this.fName_rabtn.UseVisualStyleBackColor = true;
+            // 
+            // lName_rabtn
+            // 
+            this.lName_rabtn.AutoSize = true;
+            this.lName_rabtn.Location = new System.Drawing.Point(178, 12);
+            this.lName_rabtn.Name = "lName_rabtn";
+            this.lName_rabtn.Size = new System.Drawing.Size(97, 21);
+            this.lName_rabtn.TabIndex = 3;
+            this.lName_rabtn.TabStop = true;
+            this.lName_rabtn.Text = "Last Name";
+            this.lName_rabtn.UseVisualStyleBackColor = true;
+            // 
+            // studentManageDataSet1
+            // 
+            this.studentManageDataSet1.DataSetName = "StudentManageDataSet1";
+            this.studentManageDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "student";
+            this.studentBindingSource.DataSource = this.studentManageDataSet1;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -146,73 +213,6 @@ namespace MidTermProject
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             this.pictureDataGridViewImageColumn.Width = 125;
             // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "student";
-            this.studentBindingSource.DataSource = this.studentDataSet1;
-            // 
-            // studentDataSet1
-            // 
-            this.studentDataSet1.DataSetName = "studentDataSet1";
-            this.studentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cancel_btn
-            // 
-            this.cancel_btn.Location = new System.Drawing.Point(528, 424);
-            this.cancel_btn.Name = "cancel_btn";
-            this.cancel_btn.Size = new System.Drawing.Size(112, 26);
-            this.cancel_btn.TabIndex = 5;
-            this.cancel_btn.Text = "Cancel";
-            this.cancel_btn.UseVisualStyleBackColor = true;
-            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
-            // 
-            // search_btn
-            // 
-            this.search_btn.Location = new System.Drawing.Point(528, 48);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(112, 26);
-            this.search_btn.TabIndex = 6;
-            this.search_btn.Text = "Search";
-            this.search_btn.UseVisualStyleBackColor = true;
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
-            // 
-            // id_rabtn
-            // 
-            this.id_rabtn.AutoSize = true;
-            this.id_rabtn.Location = new System.Drawing.Point(27, 12);
-            this.id_rabtn.Name = "id_rabtn";
-            this.id_rabtn.Size = new System.Drawing.Size(42, 21);
-            this.id_rabtn.TabIndex = 1;
-            this.id_rabtn.TabStop = true;
-            this.id_rabtn.Text = "ID";
-            this.id_rabtn.UseVisualStyleBackColor = true;
-            // 
-            // fName_rabtn
-            // 
-            this.fName_rabtn.AutoSize = true;
-            this.fName_rabtn.Location = new System.Drawing.Point(75, 12);
-            this.fName_rabtn.Name = "fName_rabtn";
-            this.fName_rabtn.Size = new System.Drawing.Size(97, 21);
-            this.fName_rabtn.TabIndex = 2;
-            this.fName_rabtn.TabStop = true;
-            this.fName_rabtn.Text = "First Name";
-            this.fName_rabtn.UseVisualStyleBackColor = true;
-            // 
-            // lName_rabtn
-            // 
-            this.lName_rabtn.AutoSize = true;
-            this.lName_rabtn.Location = new System.Drawing.Point(178, 12);
-            this.lName_rabtn.Name = "lName_rabtn";
-            this.lName_rabtn.Size = new System.Drawing.Size(97, 21);
-            this.lName_rabtn.TabIndex = 3;
-            this.lName_rabtn.TabStop = true;
-            this.lName_rabtn.Text = "Last Name";
-            this.lName_rabtn.UseVisualStyleBackColor = true;
-            // 
             // FormSearchStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,8 +229,8 @@ namespace MidTermProject
             this.Text = "FormSearchStudent";
             this.Load += new System.EventHandler(this.FormSearchStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.show_datagv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,9 +242,12 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridView show_datagv;
         private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.Button search_btn;
-        private studentDataSet studentDataSet1;
+        private System.Windows.Forms.RadioButton id_rabtn;
+        private System.Windows.Forms.RadioButton fName_rabtn;
+        private System.Windows.Forms.RadioButton lName_rabtn;
+        private StudentManageDataSet1 studentManageDataSet1;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private studentDataSetTableAdapters.studentTableAdapter studentTableAdapter;
+        private StudentManageDataSet1TableAdapters.studentTableAdapter studentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
@@ -253,8 +256,5 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
-        private System.Windows.Forms.RadioButton id_rabtn;
-        private System.Windows.Forms.RadioButton fName_rabtn;
-        private System.Windows.Forms.RadioButton lName_rabtn;
     }
 }

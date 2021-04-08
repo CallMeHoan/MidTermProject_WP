@@ -13,15 +13,16 @@ namespace MidTermProject
 {
     public partial class FormEditCourse : Form
     {
-        courseFunction cf = new courseFunction();
-        MyCourses courses = new MyCourses();
+        CourseFunction cf = new CourseFunction();
+        DBConnection dbcon = new DBConnection();
         public FormEditCourse()
         {
             InitializeComponent();
         }
         private void FormEditCourse_Load(object sender, EventArgs e)
         {
-            this.coursesTableAdapter.Fill(this.coursesDataSet.courses);
+            // TODO: This line of code loads data into the 'studentManageDataSet1.courses' table. You can move, or remove it, as needed.
+            this.coursesTableAdapter.Fill(this.studentManageDataSet1.courses);
             ID_cb.SelectedItem = null;
         }
         private void ID_cb_SelectedValueChanged(object sender, EventArgs e)
@@ -80,17 +81,17 @@ namespace MidTermProject
         public void loadData()
         {
             int id = Convert.ToInt32(ID_cb.SelectedValue);
-            courses.openConnectionState();
+            dbcon.openConnection();
             //load course name
-            SqlCommand cmdName = new SqlCommand("select Label from courses where CourseID = " + id, courses.GetConnection);
+            SqlCommand cmdName = new SqlCommand("select Label from courses where CourseID = " + id, dbcon.getConnection);
             cName_txt.Text = Convert.ToString(cmdName.ExecuteScalar());
 
             //load period
-            SqlCommand cmdPeriod = new SqlCommand("select Period from courses where CourseID = " + id, courses.GetConnection);
+            SqlCommand cmdPeriod = new SqlCommand("select Period from courses where CourseID = " + id, dbcon.getConnection);
             period_nud.Value = Convert.ToInt32(cmdPeriod.ExecuteScalar());
 
             //load description
-            SqlCommand cmdDes = new SqlCommand("select Description from courses where CourseID = " + id, courses.GetConnection);
+            SqlCommand cmdDes = new SqlCommand("select Description from courses where CourseID = " + id, dbcon.getConnection);
             descript_txt.Text = Convert.ToString(cmdDes.ExecuteScalar());
         }
     }

@@ -12,7 +12,7 @@ namespace MidTermProject
 {
     public partial class FormRemoveCourse : Form
     {
-        courseFunction cf = new courseFunction();
+        CourseFunction cf = new CourseFunction();
         public FormRemoveCourse()
         {
             InitializeComponent();

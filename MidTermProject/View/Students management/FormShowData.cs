@@ -16,20 +16,22 @@ namespace MidTermProject
 {
     public partial class FormShowData : Form
     {
+        StudentFunction stuf = new StudentFunction();
         public FormShowData()
         {
             InitializeComponent();
         }
-        STUDENT student = new STUDENT();
 
         private void FormShowData_Load(object sender, EventArgs e)
         {
-            this.studentTableAdapter.Fill(this.studentDataSet.student);
+            // TODO: This line of code loads data into the 'studentManageDataSet1.student' table. You can move, or remove it, as needed.
+            this.studentTableAdapter.Fill(this.studentManageDataSet1.student);
+            this.studentTableAdapter.Fill(this.studentManageDataSet1.student);
             SqlCommand command = new SqlCommand("SELECT * FROM student");
             dataGridView1.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             dataGridView1.RowTemplate.Height = 80;
-            dataGridView1.DataSource = student.getStudents(command);
+            dataGridView1.DataSource = stuf.getStudents(command);
             picCol = (DataGridViewImageColumn)dataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView1.AllowUserToAddRows = false;
@@ -62,7 +64,7 @@ namespace MidTermProject
             dataGridView1.ReadOnly = true;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
             dataGridView1.RowTemplate.Height = 80;
-            dataGridView1.DataSource = student.getStudents(command);
+            dataGridView1.DataSource = stuf.getStudents(command);
             picCol = (DataGridViewImageColumn)dataGridView1.Columns[7];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView1.AllowUserToAddRows = false;

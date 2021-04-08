@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace MidTermProject
 {
-    class CourseFunction
+    class ScoreFunction
     {
         DBConnection dbcon = new DBConnection();
-        //Insert course
-        public bool insertCourse(int id, string name, int period, string des)
+        public bool insertScore(int stuid, int cid, double score, string des)
         {
-            SqlCommand command = new SqlCommand("insert into courses (CourseID,Label,Period,Description)" + "values (@id,@cname,@period,@des)", dbcon.getConnection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            command.Parameters.Add("@cname", SqlDbType.NVarChar).Value = name;
-            command.Parameters.Add("@period", SqlDbType.Int).Value = period;
+            SqlCommand command = new SqlCommand("insert into score (StudentID,CourseID,Score,Description)" + "values (@stuid,@cid,@score,@des)", dbcon.getConnection);
+            command.Parameters.Add("@stuid", SqlDbType.Int).Value = stuid;
+            command.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+            command.Parameters.Add("@score", SqlDbType.Float).Value = score;
             command.Parameters.Add("@des", SqlDbType.Text).Value = des;
 
             dbcon.openConnection();
@@ -37,7 +35,7 @@ namespace MidTermProject
         // Remove course
         public bool removeCourse(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM courses WHERE CourseID = @id", dbcon.getConnection);
+            SqlCommand command = new SqlCommand("DELETE FROM score WHERE CourseID = @id", dbcon.getConnection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             dbcon.openConnection();
             if ((command.ExecuteNonQuery() == 1))

@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace MidTermProject
 {
     public partial class FormManageCourse : Form
     {
-        courseFunction cf = new courseFunction();
+        CourseFunction cf = new CourseFunction();
         public FormManageCourse()
         {
             InitializeComponent();
@@ -20,8 +14,9 @@ namespace MidTermProject
 
         private void FormManageCourse_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'coursesDataSetFull.courses' table. You can move, or remove it, as needed.
-            this.coursesTableAdapter.Fill(this.coursesDataSetFull.courses);
+            // TODO: This line of code loads data into the 'studentManageDataSet1.courses' table. You can move, or remove it, as needed.
+            this.coursesTableAdapter1.Fill(this.studentManageDataSet1.courses);
+
 
         }
         //cancel button
@@ -124,8 +119,28 @@ namespace MidTermProject
         //refresh button
         private void refresh_btn_Click(object sender, EventArgs e)
         {
-            this.coursesTableAdapter.Fill(this.coursesDataSetFull.courses);
+            this.coursesTableAdapter1.Fill(this.studentManageDataSet1.courses);
         }
+        //Search button
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            if (id_rabtn.Checked)
+            {
+                SqlCommand command = new SqlCommand("select * from courses where CourseID = " + SearchBar_txt.Text);
+                showCourse_dgv.DataSource = cf.getCourse(command);
+            }
+            else if (name_rbtn.Checked)
+            {
+                SqlCommand command = new SqlCommand("select * from courses where Label LIKE '%" + SearchBar_txt.Text + "%'");
+                showCourse_dgv.DataSource = cf.getCourse(command);
+            }
+            else
+            {
+                SqlCommand command = new SqlCommand("select * from courses");
+                showCourse_dgv.DataSource = cf.getCourse(command);
+            }
+        }
+
 
         /*Function*/
         public bool Verify()

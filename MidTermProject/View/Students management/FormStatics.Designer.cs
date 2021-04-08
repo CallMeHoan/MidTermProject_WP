@@ -47,9 +47,9 @@ namespace MidTermProject
             this.fm_lb = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.data1_lb = new System.Windows.Forms.Label();
-            this.studentDataSet3 = new MidTermProject.studentDataSet();
+            this.studentDataSet3 = new MidTermProject.StudentManageDataSet1();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentTableAdapter = new MidTermProject.studentDataSetTableAdapters.studentTableAdapter();
+            this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.viewChart_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -272,9 +272,9 @@ namespace MidTermProject
         private System.Windows.Forms.Label m_lb;
         private System.Windows.Forms.Label fm_lb;
         private System.Windows.Forms.Label total_lb;
-        private studentDataSet studentDataSet3;
+        private StudentManageDataSet1 studentDataSet3;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private studentDataSetTableAdapters.studentTableAdapter studentTableAdapter;
+        private StudentManageDataSet1TableAdapters.studentTableAdapter studentTableAdapter;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button viewChart_btn;
     }
