@@ -50,5 +50,12 @@ namespace MidTermProject
             chart1.Series["Series1"].Points.AddXY("Male", (Math.Round(((total(maleStu) / total(totalStu)) * 100), 2)).ToString());
             chart1.Series["Series1"].Points.AddXY("Female", (Math.Round(((total(femaleStu) / total(totalStu)) * 100), 2)).ToString());
         }
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormMain fm = new FormMain();
+            fm.Show();
+        }
     }
 }

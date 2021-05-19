@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Sdraw = System.Drawing;
 using System.Drawing.Imaging;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Reflection;
-using System.Drawing.Printing;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using Microsoft.Office.Interop.Word;
 using Image = System.Drawing.Image;
+using System.Drawing.Printing;
 
 namespace MidTermProject
 {
@@ -105,14 +104,69 @@ namespace MidTermProject
         //button save to word
         private void saveWord_btn_Click(object sender, EventArgs e)
         {
-            SaveFileDialog savefile = new SaveFileDialog();
-            savefile.DefaultExt = "*.docx";
-            savefile.Filter = "DOCX files(*.docx)|*.docx";
+            /* SaveFileDialog savefile = new SaveFileDialog();
+             savefile.DefaultExt = "*.docx";
+             savefile.Filter = "DOCX files(*.docx)|*.docx";
 
-            if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+             if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+             {
+                 Export_Data_To_Word(info_dgv, savefile.FileName);
+                 MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             }*/
+            if (info_dgv.Rows.Count > 0)
             {
-                Export_Data_To_Word(info_dgv, savefile.FileName);
-                MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
+                word.Visible = true;
+                Object missing = System.Reflection.Missing.Value;
+                Microsoft.Office.Interop.Word.Document wordDoc = word.Documents.Add(Type.Missing);
+
+                Microsoft.Office.Interop.Word.Paragraph title = wordDoc.Content.Paragraphs.Add(ref missing);
+
+                title.Range.Text = "Danh sach hoc sinh";
+                title.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                title.Range.Font.Size = 40;
+                title.Range.InsertParagraphAfter();
+                title.Range.Font.Reset();
+
+                Microsoft.Office.Interop.Word.Paragraph content = wordDoc.Content.Paragraphs.Add(ref missing);
+                content.Range.Text = "Giang Vien: Le Vinh Thinh";
+                content.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
+                content.Range.InsertParagraphAfter();
+
+                Microsoft.Office.Interop.Word.Paragraph content2 = wordDoc.Content.Paragraphs.Add(ref missing);
+                content2.Range.Text = "Tong so sinh vien: " + info_dgv.Rows.Count;
+                content2.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
+                content2.Range.InsertParagraphAfter();
+
+                Microsoft.Office.Interop.Word.Paragraph para1 = wordDoc.Content.Paragraphs.Add(ref missing);
+
+
+                Table Tab1 = wordDoc.Tables.Add(para1.Range, 1, 9, ref missing, ref missing);
+                Tab1.Borders.Enable = 1;
+                Tab1.Range.Font.Size = 12;
+                Tab1.Cell(1, 1).Range.Text = "Order number";
+                for (int i = 1; i < info_dgv.Columns.Count + 1; i++)
+                {
+                    Tab1.Cell(1, i + 1).Range.Text = info_dgv.Columns[i - 1].HeaderText + Environment.NewLine;
+                }
+                for (int i = 0; i < info_dgv.Rows.Count; i++)
+                {
+                    Tab1.Rows.Add();
+                    Tab1.Cell(i + 2, 1).Range.Text = (i + 1).ToString();
+                    for (int j = 0; j < info_dgv.Columns.Count; j++)
+                    {
+                        if (info_dgv.Rows[i].Cells[j].Value.GetType() == typeof(byte[]))
+                        {
+                            Sdraw.Image image1 = byteArrayToImage((byte[])info_dgv.Rows[i].Cells[j].Value);
+                            image1.Save(@"L:\image.img");
+                            Tab1.Cell(i + 2, j + 2).Range.InlineShapes.AddPicture(@"L:\image.img");
+                            File.Delete(@"L:\image.img");
+                        }
+                        else
+                            Tab1.Cell(i + 2, j + 2).Range.Text = info_dgv.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                Tab1.Columns.AutoFit();
             }
         }
         //button check
@@ -333,6 +387,13 @@ namespace MidTermProject
                 //save the file
                 oDoc.SaveAs2(filename);
             }
+        }
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormMain fm = new FormMain();
+            fm.Show();
         }
     }
 

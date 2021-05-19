@@ -250,5 +250,12 @@ namespace MidTermProject
                 picture_ptb.Image.Save(svf.FileName + ("." + ImageFormat.Jpeg.ToString()));
             }
         }
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormMain fm = new FormMain();
+            fm.Show();
+        }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MidTermProject
+namespace MidTermProject.View.Courses_management
 {
-    public partial class FormPrintScore : Form
+    public partial class FormRegistration : Form
     {
-        public FormPrintScore()
+        public FormRegistration()
         {
             InitializeComponent();
         }

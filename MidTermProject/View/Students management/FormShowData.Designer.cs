@@ -31,10 +31,6 @@ namespace MidTermProject
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentManageDataSet1 = new MidTermProject.StudentManageDataSet1();
-            this.reFresh_btn = new System.Windows.Forms.Button();
-            this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,11 @@ namespace MidTermProject
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentManageDataSet1 = new MidTermProject.StudentManageDataSet1();
+            this.reFresh_btn = new System.Windows.Forms.Button();
+            this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
+            this.cancel_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).BeginInit();
@@ -69,30 +70,6 @@ namespace MidTermProject
             this.dataGridView1.Size = new System.Drawing.Size(936, 364);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "student";
-            this.studentBindingSource.DataSource = this.studentManageDataSet1;
-            // 
-            // studentManageDataSet1
-            // 
-            this.studentManageDataSet1.DataSetName = "StudentManageDataSet1";
-            this.studentManageDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reFresh_btn
-            // 
-            this.reFresh_btn.Location = new System.Drawing.Point(398, 403);
-            this.reFresh_btn.Name = "reFresh_btn";
-            this.reFresh_btn.Size = new System.Drawing.Size(224, 42);
-            this.reFresh_btn.TabIndex = 2;
-            this.reFresh_btn.Text = "Refresh";
-            this.reFresh_btn.UseVisualStyleBackColor = true;
-            this.reFresh_btn.Click += new System.EventHandler(this.reFresh_btn_Click);
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -158,11 +135,46 @@ namespace MidTermProject
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             this.pictureDataGridViewImageColumn.Width = 125;
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "student";
+            this.studentBindingSource.DataSource = this.studentManageDataSet1;
+            // 
+            // studentManageDataSet1
+            // 
+            this.studentManageDataSet1.DataSetName = "StudentManageDataSet1";
+            this.studentManageDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reFresh_btn
+            // 
+            this.reFresh_btn.Location = new System.Drawing.Point(237, 416);
+            this.reFresh_btn.Name = "reFresh_btn";
+            this.reFresh_btn.Size = new System.Drawing.Size(224, 42);
+            this.reFresh_btn.TabIndex = 2;
+            this.reFresh_btn.Text = "Refresh";
+            this.reFresh_btn.UseVisualStyleBackColor = true;
+            this.reFresh_btn.Click += new System.EventHandler(this.reFresh_btn_Click);
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // cancel_btn
+            // 
+            this.cancel_btn.Location = new System.Drawing.Point(560, 416);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(224, 42);
+            this.cancel_btn.TabIndex = 3;
+            this.cancel_btn.Text = "Cancel";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
+            // 
             // FormShowData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 456);
+            this.ClientSize = new System.Drawing.Size(1022, 503);
+            this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.reFresh_btn);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormShowData";
@@ -189,5 +201,6 @@ namespace MidTermProject
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
+        private System.Windows.Forms.Button cancel_btn;
     }
 }

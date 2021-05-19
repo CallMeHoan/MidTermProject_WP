@@ -21,6 +21,8 @@ namespace MidTermProject
         private void Cancel_btn_Click_1(object sender, EventArgs e)
         {
             Close();
+            FormMain fm = new FormMain();
+            fm.Show();
         }
 
         private void Add_btn_Click_1(object sender, EventArgs e)

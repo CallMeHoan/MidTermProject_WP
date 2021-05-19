@@ -45,6 +45,8 @@ namespace MidTermProject
         private void showInfo_dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             StuID_txt.Text = showInfo_dgv.CurrentRow.Cells[0].Value.ToString();
+            course_cb.Text = showInfo_dgv.CurrentRow.Cells[4].Value.ToString();
+            score_txt.Text = showInfo_dgv.CurrentRow.Cells[5].Value.ToString();
         }
         //cancel button
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -91,7 +93,7 @@ namespace MidTermProject
         {
             int stuid = Convert.ToInt32(StuID_txt.Text);
             int cid = Convert.ToInt32(course_cb.SelectedValue);
-            float score = float.Parse(score_txt.Text);
+            float score = Convert.ToSingle(score_txt.Text);
             string des = descript_txt.Text;
 
             if (score > 10 || score < 0)
@@ -144,8 +146,8 @@ namespace MidTermProject
         private void showAvg_btn_Click(object sender, EventArgs e)
         {
             Close();
-            FormAvgScore avg = new FormAvgScore();
-            avg.Show();
+            FormPrint print = new FormPrint();
+            print.Show();
         }
         /*Function*/
         //Load bảng dữ liệu

@@ -92,5 +92,15 @@ namespace MidTermProject
                 dbcon.closeConnection();
             }
         }
+        public DataTable getAllCourse()
+        {
+            SqlCommand command = new SqlCommand("SELECT *  FROM courses", dbcon.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+
+            return table;
+        }
     }
 }

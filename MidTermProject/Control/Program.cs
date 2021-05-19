@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Lab08;
+using MidTermProject.View.Courses_management;
+using MidTermProject.View.Result;
+using System;
 using System.Windows.Forms;
 
 namespace MidTermProject
@@ -13,7 +16,7 @@ namespace MidTermProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAvgScore());
+            Application.Run(new FormLogin());
         }
     }
 }

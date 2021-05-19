@@ -52,6 +52,7 @@ namespace MidTermProject
             this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.viewChart_btn = new System.Windows.Forms.Button();
+            this.cancel_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -230,11 +231,22 @@ namespace MidTermProject
             this.viewChart_btn.UseVisualStyleBackColor = true;
             this.viewChart_btn.Click += new System.EventHandler(this.viewChart_btn_Click);
             // 
+            // cancel_btn
+            // 
+            this.cancel_btn.Location = new System.Drawing.Point(611, 450);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(125, 36);
+            this.cancel_btn.TabIndex = 12;
+            this.cancel_btn.Text = "Cancel";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
+            // 
             // FormStatics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 498);
+            this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.viewChart_btn);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.data1_lb);
@@ -277,5 +289,6 @@ namespace MidTermProject
         private StudentManageDataSet1TableAdapters.studentTableAdapter studentTableAdapter;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button viewChart_btn;
+        private System.Windows.Forms.Button cancel_btn;
     }
 }

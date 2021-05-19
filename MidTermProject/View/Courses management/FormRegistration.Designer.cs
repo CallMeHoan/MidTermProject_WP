@@ -1,7 +1,7 @@
 ﻿
-namespace MidTermProject
+namespace MidTermProject.View.Courses_management
 {
-    partial class FormPrintScore
+    partial class FormRegistration
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace MidTermProject
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormPrintScore";
+            this.Text = "FormRegistration";
         }
 
         #endregion

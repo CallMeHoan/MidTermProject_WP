@@ -40,11 +40,17 @@ namespace MidTermProject
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.student_rbtn = new System.Windows.Forms.RadioButton();
+            this.human_rbtn = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.human_rbtn);
+            this.panel1.Controls.Add(this.student_rbtn);
             this.panel1.Controls.Add(this.signup_btn);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Cancel_btn);
@@ -111,7 +117,7 @@ namespace MidTermProject
             // 
             // pword_txt
             // 
-            this.pword_txt.Location = new System.Drawing.Point(228, 180);
+            this.pword_txt.Location = new System.Drawing.Point(228, 155);
             this.pword_txt.Name = "pword_txt";
             this.pword_txt.Size = new System.Drawing.Size(205, 22);
             this.pword_txt.TabIndex = 4;
@@ -119,7 +125,7 @@ namespace MidTermProject
             // 
             // uname_txt
             // 
-            this.uname_txt.Location = new System.Drawing.Point(228, 132);
+            this.uname_txt.Location = new System.Drawing.Point(228, 107);
             this.uname_txt.Name = "uname_txt";
             this.uname_txt.Size = new System.Drawing.Size(205, 22);
             this.uname_txt.TabIndex = 3;
@@ -128,7 +134,7 @@ namespace MidTermProject
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(108, 180);
+            this.label3.Location = new System.Drawing.Point(108, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 2;
@@ -137,7 +143,7 @@ namespace MidTermProject
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(108, 134);
+            this.label2.Location = new System.Drawing.Point(108, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 1;
@@ -151,6 +157,37 @@ namespace MidTermProject
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
+            // 
+            // student_rbtn
+            // 
+            this.student_rbtn.AutoSize = true;
+            this.student_rbtn.Location = new System.Drawing.Point(213, 204);
+            this.student_rbtn.Name = "student_rbtn";
+            this.student_rbtn.Size = new System.Drawing.Size(78, 21);
+            this.student_rbtn.TabIndex = 10;
+            this.student_rbtn.TabStop = true;
+            this.student_rbtn.Text = "Student";
+            this.student_rbtn.UseVisualStyleBackColor = true;
+            // 
+            // human_rbtn
+            // 
+            this.human_rbtn.AutoSize = true;
+            this.human_rbtn.Location = new System.Drawing.Point(326, 204);
+            this.human_rbtn.Name = "human_rbtn";
+            this.human_rbtn.Size = new System.Drawing.Size(141, 21);
+            this.human_rbtn.TabIndex = 11;
+            this.human_rbtn.TabStop = true;
+            this.human_rbtn.Text = "Human resources";
+            this.human_rbtn.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(108, 207);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Login as:";
             // 
             // FormLogin
             // 
@@ -179,6 +216,9 @@ namespace MidTermProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button signup_btn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton human_rbtn;
+        private System.Windows.Forms.RadioButton student_rbtn;
     }
 }
 

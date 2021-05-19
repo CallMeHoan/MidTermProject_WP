@@ -69,5 +69,12 @@ namespace MidTermProject
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView1.AllowUserToAddRows = false;
         }
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormMain fm = new FormMain();
+            fm.Show();
+        }
     }
 }

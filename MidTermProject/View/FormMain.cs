@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MidTermProject.View.Courses_management;
+using MidTermProject.View.Result;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +95,54 @@ namespace MidTermProject
             Close();
             FormPrintCourse print = new FormPrintCourse();
             print.Show();
+        }
+
+        private void addScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormAddScore addScore = new FormAddScore();
+            addScore.Show();
+        }
+
+        private void manageScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormManageScore manageScore = new FormManageScore();
+            manageScore.Show();
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormPrint print = new FormPrint();
+            print.Show();
+        }
+
+        private void removeScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormRemoveScore remove = new FormRemoveScore();
+            remove.Show();
+        }
+
+        private void aVGScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            
+        }
+
+        private void aVGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            AVG avg = new AVG();
+            avg.Show();
+        }
+
+        private void staticToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            Static stt = new Static();
+            stt.Show();
         }
     }
 }

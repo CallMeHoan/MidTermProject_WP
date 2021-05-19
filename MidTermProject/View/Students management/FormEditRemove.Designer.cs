@@ -51,6 +51,7 @@ namespace MidTermProject
             this.Lname_lb = new System.Windows.Forms.Label();
             this.Fname_lb = new System.Windows.Forms.Label();
             this.ID_lb = new System.Windows.Forms.Label();
+            this.cancel_btn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_ptb)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,7 +76,7 @@ namespace MidTermProject
             // 
             // remove_btn
             // 
-            this.remove_btn.Location = new System.Drawing.Point(480, 363);
+            this.remove_btn.Location = new System.Drawing.Point(328, 363);
             this.remove_btn.Name = "remove_btn";
             this.remove_btn.Size = new System.Drawing.Size(167, 56);
             this.remove_btn.TabIndex = 52;
@@ -85,7 +86,7 @@ namespace MidTermProject
             // 
             // edit_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(199, 363);
+            this.edit_btn.Location = new System.Drawing.Point(93, 363);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(167, 56);
             this.edit_btn.TabIndex = 51;
@@ -253,11 +254,22 @@ namespace MidTermProject
             this.ID_lb.TabIndex = 36;
             this.ID_lb.Text = "ID:";
             // 
+            // cancel_btn
+            // 
+            this.cancel_btn.Location = new System.Drawing.Point(544, 363);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(167, 56);
+            this.cancel_btn.TabIndex = 55;
+            this.cancel_btn.Text = "Cancel";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
+            // 
             // FormEditRemove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.address_txt);
             this.Controls.Add(this.remove_btn);
@@ -311,5 +323,6 @@ namespace MidTermProject
         public System.Windows.Forms.TextBox lName_txt;
         public System.Windows.Forms.TextBox fName_txt;
         public System.Windows.Forms.TextBox ID_txt;
+        private System.Windows.Forms.Button cancel_btn;
     }
 }

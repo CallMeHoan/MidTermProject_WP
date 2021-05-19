@@ -52,33 +52,85 @@
   <ItemGroup>
     <Compile Include="Control\DBConnection.cs" />
     <Compile Include="Control\Function\AccountFunction.cs" />
+    <Compile Include="Control\Function\CONTACT.cs" />
     <Compile Include="Control\Function\CourseFunction.cs" />
+    <Compile Include="Control\Function\Globals.cs" />
+    <Compile Include="Control\Function\GROUP.cs" />
     <Compile Include="Control\Function\ScoreFunction.cs" />
     <Compile Include="Control\Function\StudentFunction.cs" />
+    <Compile Include="Control\Function\User.cs" />
     <Compile Include="Control\Program.cs" />
+    <Compile Include="View\Contact management\AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contact management\AddContactForm.designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contact management\ContactFullListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contact management\ContactFullListForm.designer.cs">
+      <DependentUpon>ContactFullListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contact management\EditContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contact management\EditContactForm.designer.cs">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contact management\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contact management\RegisterForm.designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Contact management\SelectContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contact management\SelectContactForm.designer.cs">
+      <DependentUpon>SelectContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormPrintCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Courses management\FormPrintCourse.Designer.cs">
+      <DependentUpon>FormPrintCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Courses management\FormRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Courses management\FormRegistration.Designer.cs">
+      <DependentUpon>FormRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Result\AVG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Result\AVG.Designer.cs">
+      <DependentUpon>AVG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Result\Static.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Result\Static.Designer.cs">
+      <DependentUpon>Static.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Score management\FormAddScore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Score management\FormAddScore.Designer.cs">
       <DependentUpon>FormAddScore.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Score management\FormAvgScore.cs">
+    <Compile Include="View\Score management\FormPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Score management\FormAvgScore.Designer.cs">
-      <DependentUpon>FormAvgScore.cs</DependentUpon>
+    <Compile Include="View\Score management\FormPrint.Designer.cs">
+      <DependentUpon>FormPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Score management\FormManageScore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Score management\FormManageScore.Designer.cs">
       <DependentUpon>FormManageScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Score management\FormPrintScore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Score management\FormPrintScore.Designer.cs">
-      <DependentUpon>FormPrintScore.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Score management\FormRemoveScore.cs">
       <SubType>Form</SubType>
@@ -108,12 +160,6 @@
     </Compile>
     <Compile Include="View\Courses management\FormManageCourse.Designer.cs">
       <DependentUpon>FormManageCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Courses management\FormPrintCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Courses management\FormPrintCourse.Designer.cs">
-      <DependentUpon>FormPrintCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Courses management\FormRemoveCourse.cs">
       <SubType>Form</SubType>
@@ -182,6 +228,21 @@
       <DependentUpon>FormPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Contact management\AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contact management\ContactFullListForm.resx">
+      <DependentUpon>ContactFullListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contact management\EditContactForm.resx">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contact management\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contact management\SelectContactForm.resx">
+      <DependentUpon>SelectContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Courses management\FormAddCourse.resx">
       <DependentUpon>FormAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,14 +252,23 @@
     <EmbeddedResource Include="View\Courses management\FormManageCourse.resx">
       <DependentUpon>FormManageCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Courses management\FormPrintCourse.resx">
+      <DependentUpon>FormPrintCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Courses management\FormRemoveCourse.resx">
       <DependentUpon>FormRemoveCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Result\AVG.resx">
+      <DependentUpon>AVG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Result\Static.resx">
+      <DependentUpon>Static.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Score management\FormAddScore.resx">
       <DependentUpon>FormAddScore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Score management\FormAvgScore.resx">
-      <DependentUpon>FormAvgScore.cs</DependentUpon>
+    <EmbeddedResource Include="View\Score management\FormPrint.resx">
+      <DependentUpon>FormPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Score management\FormManageScore.resx">
       <DependentUpon>FormManageScore.cs</DependentUpon>

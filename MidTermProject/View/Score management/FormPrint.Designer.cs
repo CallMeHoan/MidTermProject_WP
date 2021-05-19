@@ -42,11 +42,16 @@ namespace MidTermProject
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
-            this.result_btn = new System.Windows.Forms.Button();
-            this.courseName_txt = new System.Windows.Forms.TextBox();
-            this.AVG_txt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.courseID_txt = new System.Windows.Forms.TextBox();
+            this.AVG_txt = new System.Windows.Forms.TextBox();
+            this.courseName_txt = new System.Windows.Forms.TextBox();
+            this.result_btn = new System.Windows.Forms.Button();
+            this.studentTableAdapter = new MidTermProject.StudentManageDataSet1TableAdapters.studentTableAdapter();
+            this.print_btn = new System.Windows.Forms.Button();
+            this.Cancel_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coursesBindingSource)).BeginInit();
@@ -147,6 +152,9 @@ namespace MidTermProject
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.courseID_txt);
             this.panel1.Controls.Add(this.AVG_txt);
             this.panel1.Controls.Add(this.courseName_txt);
@@ -156,13 +164,60 @@ namespace MidTermProject
             this.panel1.Size = new System.Drawing.Size(1100, 86);
             this.panel1.TabIndex = 3;
             // 
-            // studentTableAdapter
+            // label3
             // 
-            this.studentTableAdapter.ClearBeforeFill = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(650, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "AVG score";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(422, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Course Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(335, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Course ID";
+            // 
+            // courseID_txt
+            // 
+            this.courseID_txt.Location = new System.Drawing.Point(338, 43);
+            this.courseID_txt.Name = "courseID_txt";
+            this.courseID_txt.ReadOnly = true;
+            this.courseID_txt.Size = new System.Drawing.Size(58, 22);
+            this.courseID_txt.TabIndex = 3;
+            // 
+            // AVG_txt
+            // 
+            this.AVG_txt.Location = new System.Drawing.Point(653, 43);
+            this.AVG_txt.Name = "AVG_txt";
+            this.AVG_txt.ReadOnly = true;
+            this.AVG_txt.Size = new System.Drawing.Size(58, 22);
+            this.AVG_txt.TabIndex = 2;
+            // 
+            // courseName_txt
+            // 
+            this.courseName_txt.Location = new System.Drawing.Point(425, 43);
+            this.courseName_txt.Name = "courseName_txt";
+            this.courseName_txt.ReadOnly = true;
+            this.courseName_txt.Size = new System.Drawing.Size(204, 22);
+            this.courseName_txt.TabIndex = 1;
             // 
             // result_btn
             // 
-            this.result_btn.Location = new System.Drawing.Point(81, 31);
+            this.result_btn.Location = new System.Drawing.Point(242, 43);
             this.result_btn.Name = "result_btn";
             this.result_btn.Size = new System.Drawing.Size(75, 23);
             this.result_btn.TabIndex = 0;
@@ -170,35 +225,37 @@ namespace MidTermProject
             this.result_btn.UseVisualStyleBackColor = true;
             this.result_btn.Click += new System.EventHandler(this.result_btn_Click);
             // 
-            // courseName_txt
+            // studentTableAdapter
             // 
-            this.courseName_txt.Location = new System.Drawing.Point(290, 31);
-            this.courseName_txt.Name = "courseName_txt";
-            this.courseName_txt.ReadOnly = true;
-            this.courseName_txt.Size = new System.Drawing.Size(204, 22);
-            this.courseName_txt.TabIndex = 1;
+            this.studentTableAdapter.ClearBeforeFill = true;
             // 
-            // AVG_txt
+            // print_btn
             // 
-            this.AVG_txt.Location = new System.Drawing.Point(565, 31);
-            this.AVG_txt.Name = "AVG_txt";
-            this.AVG_txt.ReadOnly = true;
-            this.AVG_txt.Size = new System.Drawing.Size(58, 22);
-            this.AVG_txt.TabIndex = 2;
+            this.print_btn.Location = new System.Drawing.Point(364, 486);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(126, 35);
+            this.print_btn.TabIndex = 4;
+            this.print_btn.Text = "Print";
+            this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
-            // courseID_txt
+            // Cancel_btn
             // 
-            this.courseID_txt.Location = new System.Drawing.Point(177, 31);
-            this.courseID_txt.Name = "courseID_txt";
-            this.courseID_txt.ReadOnly = true;
-            this.courseID_txt.Size = new System.Drawing.Size(58, 22);
-            this.courseID_txt.TabIndex = 3;
+            this.Cancel_btn.Location = new System.Drawing.Point(630, 486);
+            this.Cancel_btn.Name = "Cancel_btn";
+            this.Cancel_btn.Size = new System.Drawing.Size(126, 35);
+            this.Cancel_btn.TabIndex = 5;
+            this.Cancel_btn.Text = "Cancel";
+            this.Cancel_btn.UseVisualStyleBackColor = true;
+            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
             // FormAvgScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 528);
+            this.Controls.Add(this.Cancel_btn);
+            this.Controls.Add(this.print_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.showStu_dgv);
             this.Controls.Add(this.showScore_dgv);
@@ -237,5 +294,10 @@ namespace MidTermProject
         private System.Windows.Forms.TextBox AVG_txt;
         private System.Windows.Forms.TextBox courseName_txt;
         private System.Windows.Forms.Button result_btn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button print_btn;
+        private System.Windows.Forms.Button Cancel_btn;
     }
 }

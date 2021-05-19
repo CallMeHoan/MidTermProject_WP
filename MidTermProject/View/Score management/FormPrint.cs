@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +73,24 @@ namespace MidTermProject
             SqlCommand command = new SqlCommand(cmd, dbcon.getConnection);
             double value = Convert.ToDouble(command.ExecuteScalar());
             return value;
+        }
+
+        private void Cancel_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormMain fm = new FormMain();
+            fm.Show();
+        }
+
+        private void print_btn_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDlg = new PrintDialog();
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.DocumentName = "Print Document";
+            printDlg.Document = printDoc;
+            printDlg.AllowSelection = true;
+            printDlg.AllowSomePages = true;
+            if (printDlg.ShowDialog() == DialogResult.OK) printDoc.Print();
         }
     }
 }
